@@ -9,6 +9,7 @@ target 'Chirp' do
 
     pod 'AFNetworking', '~> 3.0'
     pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'AFOAuth2Manager', '~> 3.0'
 
   target 'ChirpTests' do
     inherit! :search_paths
@@ -16,7 +17,8 @@ target 'Chirp' do
 
     pod 'AFNetworking', '~> 3.0'
     pod 'MBProgressHUD', '~> 1.0.0'
-
+    pod 'AFOAuth2Manager', '~> 3.0'
+    
   end
 
 end
