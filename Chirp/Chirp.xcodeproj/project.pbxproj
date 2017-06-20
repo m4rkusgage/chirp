@@ -15,6 +15,8 @@
 		8C12F2DC1EF46E580044BDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C12F2DB1EF46E580044BDB3 /* Assets.xcassets */; };
 		8C12F2DF1EF46E580044BDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C12F2DD1EF46E580044BDB3 /* LaunchScreen.storyboard */; };
 		8C12F2EA1EF46E590044BDB3 /* ChirpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C12F2E91EF46E590044BDB3 /* ChirpTests.m */; };
+		8C4C1A381EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A371EF9A6EB00DEAD6E /* TwitterConfig.plist */; };
+		8C4C1A391EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A371EF9A6EB00DEAD6E /* TwitterConfig.plist */; };
 		B0AD1645D273E33549DABDAF /* libPods-ChirpTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,7 @@
 		8C12F2E51EF46E590044BDB3 /* ChirpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChirpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C12F2E91EF46E590044BDB3 /* ChirpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChirpTests.m; sourceTree = "<group>"; };
 		8C12F2EB1EF46E590044BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C4C1A371EF9A6EB00DEAD6E /* TwitterConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TwitterConfig.plist; sourceTree = "<group>"; };
 		BB7C9F27E68F2E3D1A1CA577 /* Pods-Chirp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.release.xcconfig"; sourceTree = "<group>"; };
 		FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChirpTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +124,7 @@
 				8C12F2DB1EF46E580044BDB3 /* Assets.xcassets */,
 				8C12F2DD1EF46E580044BDB3 /* LaunchScreen.storyboard */,
 				8C12F2E01EF46E580044BDB3 /* Info.plist */,
+				8C4C1A371EF9A6EB00DEAD6E /* TwitterConfig.plist */,
 				8C12F2CF1EF46E550044BDB3 /* Supporting Files */,
 			);
 			path = Chirp;
@@ -234,6 +238,7 @@
 			files = (
 				8C12F2DF1EF46E580044BDB3 /* LaunchScreen.storyboard in Resources */,
 				8C12F2DC1EF46E580044BDB3 /* Assets.xcassets in Resources */,
+				8C4C1A381EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */,
 				8C12F2DA1EF46E570044BDB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C1A391EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +556,7 @@
 				8C12F2F01EF46E590044BDB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C12F2F11EF46E590044BDB3 /* Build configuration list for PBXNativeTarget "ChirpTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +565,7 @@
 				8C12F2F31EF46E590044BDB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
