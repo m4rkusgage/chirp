@@ -19,8 +19,10 @@
 		8C4C1A391EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A371EF9A6EB00DEAD6E /* TwitterConfig.plist */; };
 		8C4C1A3C1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A3B1EF9A78700DEAD6E /* TLTwitterAPIClient.m */; };
 		8C4C1A3D1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A3B1EF9A78700DEAD6E /* TLTwitterAPIClient.m */; };
-		8C4C1A401EF9D3D400DEAD6E /* TLTwitterCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A3F1EF9D3D400DEAD6E /* TLTwitterCredential.m */; };
-		8C4C1A411EF9D3D400DEAD6E /* TLTwitterCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A3F1EF9D3D400DEAD6E /* TLTwitterCredential.m */; };
+		8C4C1A441EFACA0000DEAD6E /* TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */; };
+		8C4C1A451EFACA0000DEAD6E /* TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */; };
+		8C4C1A481EFACABC00DEAD6E /* TLAuthUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */; };
+		8C4C1A491EFACABC00DEAD6E /* TLAuthUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */; };
 		B0AD1645D273E33549DABDAF /* libPods-ChirpTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +57,10 @@
 		8C4C1A371EF9A6EB00DEAD6E /* TwitterConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TwitterConfig.plist; sourceTree = "<group>"; };
 		8C4C1A3A1EF9A78700DEAD6E /* TLTwitterAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTwitterAPIClient.h; sourceTree = "<group>"; };
 		8C4C1A3B1EF9A78700DEAD6E /* TLTwitterAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTwitterAPIClient.m; sourceTree = "<group>"; };
-		8C4C1A3E1EF9D3D400DEAD6E /* TLTwitterCredential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTwitterCredential.h; sourceTree = "<group>"; };
-		8C4C1A3F1EF9D3D400DEAD6E /* TLTwitterCredential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTwitterCredential.m; sourceTree = "<group>"; };
+		8C4C1A421EFAC9FF00DEAD6E /* TLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUser.h; sourceTree = "<group>"; };
+		8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUser.m; sourceTree = "<group>"; };
+		8C4C1A461EFACABC00DEAD6E /* TLAuthUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAuthUser.h; sourceTree = "<group>"; };
+		8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAuthUser.m; sourceTree = "<group>"; };
 		BB7C9F27E68F2E3D1A1CA577 /* Pods-Chirp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.release.xcconfig"; sourceTree = "<group>"; };
 		FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChirpTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,8 +140,10 @@
 				8C12F2CF1EF46E550044BDB3 /* Supporting Files */,
 				8C4C1A3A1EF9A78700DEAD6E /* TLTwitterAPIClient.h */,
 				8C4C1A3B1EF9A78700DEAD6E /* TLTwitterAPIClient.m */,
-				8C4C1A3E1EF9D3D400DEAD6E /* TLTwitterCredential.h */,
-				8C4C1A3F1EF9D3D400DEAD6E /* TLTwitterCredential.m */,
+				8C4C1A421EFAC9FF00DEAD6E /* TLUser.h */,
+				8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */,
+				8C4C1A461EFACABC00DEAD6E /* TLAuthUser.h */,
+				8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */,
 			);
 			path = Chirp;
 			sourceTree = "<group>";
@@ -363,11 +369,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C1A481EFACABC00DEAD6E /* TLAuthUser.m in Sources */,
 				8C12F2D71EF46E560044BDB3 /* ViewController.m in Sources */,
 				8C12F2D41EF46E560044BDB3 /* AppDelegate.m in Sources */,
 				8C12F2D11EF46E550044BDB3 /* main.m in Sources */,
 				8C4C1A3C1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */,
-				8C4C1A401EF9D3D400DEAD6E /* TLTwitterCredential.m in Sources */,
+				8C4C1A441EFACA0000DEAD6E /* TLUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,8 +382,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4C1A411EF9D3D400DEAD6E /* TLTwitterCredential.m in Sources */,
 				8C12F2EA1EF46E590044BDB3 /* ChirpTests.m in Sources */,
+				8C4C1A491EFACABC00DEAD6E /* TLAuthUser.m in Sources */,
+				8C4C1A451EFACA0000DEAD6E /* TLUser.m in Sources */,
 				8C4C1A3D1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

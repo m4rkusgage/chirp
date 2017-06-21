@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "TLTwitterAPIClient.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) TLTwitterAPIClient *apiClient;
 @end
 
 @implementation AppDelegate
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if ([self.apiClient getLoginStatus]) {
+        
+    } else {
+        
+    }
+    
+    
     return YES;
 }
 
@@ -47,5 +55,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (TLTwitterAPIClient *)apiClient
+{
+    if (!_apiClient) {
+        _apiClient = [TLTwitterAPIClient sharedInstance];
+    }
+    return _apiClient;
+}
 
 @end

@@ -8,8 +8,9 @@
 
 #import "TLTwitterAPIClient.h"
 
+
 @interface TLTwitterAPIClient ()
-@property (strong, nonatomic) TLTwitterCredential *credential;
+@property (strong, nonatomic) TLAuthUser *twitterAccount;
 @end
 
 @implementation TLTwitterAPIClient
@@ -30,82 +31,99 @@
 {
     self = [super init];
     if (self) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"TwitterConfig" ofType:@"plist"];
-        NSDictionary *config = [[NSDictionary alloc] initWithContentsOfFile:path];
-        
-        self.credential = [TLTwitterAPIClient retrieveCredentials];
-        if (self.credential) {
-            _twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:config[@"twitter_api_key"]  consumerSecret:config[@"twitter_api_key"]  oauthToken:self.credential.authToken oauthTokenSecret:self.credential.authTokenSecret];
-        } else {
-            _twitterAPI = [STTwitterAPI twitterAPIWithOAuthConsumerKey:config[@"twitter_api_key"] consumerSecret:config[@"twitter_api_secret"]];
+        NSData *authUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"authUser"];
+        if (authUser) {
+            self.twitterAccount = [NSKeyedUnarchiver unarchiveObjectWithData:authUser];
         }
     }
     return self;
 }
 
-- (void)logInToTwitter
+- (void)getiOSTwitterAccount:(void (^)(ACAccount *))completionHandler
 {
-    [self.twitterAPI postTokenRequest:^(NSURL *url, NSString *oauthToken) {
-        
-        [[UIApplication sharedApplication] openURL:url
-                                           options:@{}
-                                 completionHandler:^(BOOL success) {}];
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
-    } oauthCallback:@"tweetland://" errorBlock:^(NSError *error) {
+    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
+        if (granted == YES)
+        {
+            NSArray *arrayOfAccounts = [accountStore accountsWithAccountType:accountType];
+            
+            if ([arrayOfAccounts count] > 0)
+            {
+                ACAccount *twitterAccount = [arrayOfAccounts objectAtIndex:0];
+                [self.twitterAccount setTwitterAccount:twitterAccount];
+                completionHandler(twitterAccount);
+            }
+        }
     }];
 }
 
-- (void)getHomeTimeLineWithSuccess:(APISuccessBlock)success failure:(APIFailureBlock)failure
+- (void)getProfileInfoOfAccount:(ACAccount *)account completionHandler:(void (^)(TLAuthUser *))completionHandler
 {
-    [self.twitterAPI getHomeTimelineSinceID:nil count:10 successBlock:^(NSArray *statuses) {
-        NSLog(@"Status: %@",statuses );
-        success(statuses);
-    } errorBlock:^(NSError *error) {
-        failure(error);
-    }];
-}
-
-- (void)requestTokenWithPin:(NSString *)pin success:(APIBlock)success failure:(APIBlock)failure
-{
-    [self.twitterAPI postAccessTokenRequestWithPIN:pin
-                                      successBlock:^(NSString *oauthToken, NSString *oauthTokenSecret, NSString *userID, NSString *screenName) {
-                                          
-                                          if (!self.credential) {
-                                              self.credential = [[TLTwitterCredential alloc] init];
-                                          }
-                                          [self.credential setUserID:userID];
-                                          [self.credential setUserScreenName:screenName];
-                                          [self.credential setAuthToken:oauthToken];
-                                          [self.credential setAuthTokenSecret:oauthTokenSecret];
-                                          [self.credential setVerifier:pin];
-                                          
-                                          NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.credential];
-                                          [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"credential"];
-                                          
-                                          success(YES);
-                                          
-    } errorBlock:^(NSError *error) {
-        failure(NO);
-    }];
-}
-
-- (void)verifyCredentials:(APIBlock)success
-{
-    [self.twitterAPI verifyCredentialsWithUserSuccessBlock:^(NSString *username, NSString *userID) {
-        success(YES);
-    } errorBlock:^(NSError *error) {
-        success(NO);
-    }];
-}
-
-+ (TLTwitterCredential *)retrieveCredentials
-{
-    NSData *credentialData = [[NSUserDefaults standardUserDefaults] objectForKey:@"credential"];
+    SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                                       requestMethod:SLRequestMethodGET
+                                                                 URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/account/verify_credentials.json"]
+                                                          parameters:@{@"include_entities": @YES,
+                                                                       @"skip_status": @YES}];
     
-    if (!credentialData) {
-        return nil;
+    [twitterInfoRequest setAccount:account];
+    
+    [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (responseData) {
+                NSError *error = nil;
+                NSDictionary *twitterData = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                       options:NSJSONReadingMutableLeaves
+                                                                         error:&error];
+                NSLog(@"%@",twitterData);
+                [self.twitterAccount setDataWith:[twitterData copy]];
+                completionHandler(self.twitterAccount);
+            }
+        });
+    }];
+}
+
+- (TLAuthUser *)twitterAccount
+{
+    if (!_twitterAccount) {
+        _twitterAccount = [[TLAuthUser alloc] init];
     }
-    TLTwitterCredential *credential = [NSKeyedUnarchiver unarchiveObjectWithData:credentialData];
-    return credential;
+    return _twitterAccount;
+}
+
+- (TLAuthUser *)getAuthorizedUser
+{
+    return self.twitterAccount;
+}
+
+- (BOOL)login
+{
+    if ([self.twitterAccount twitterAccount]) {
+        self.twitterAccount.loginStatus = YES;
+        [self saveAuthUser];
+        
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)logout
+{
+    self.twitterAccount.loginStatus = NO;
+    [self saveAuthUser];
+    
+    return YES;
+}
+
+- (BOOL)getLoginStatus
+{
+    return [[self getAuthorizedUser] getLoginStatus];
+}
+
+- (void)saveAuthUser
+{
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.twitterAccount];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"authUser"];
 }
 @end

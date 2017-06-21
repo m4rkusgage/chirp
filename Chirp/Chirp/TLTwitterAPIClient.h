@@ -8,25 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "STTwitter.h"
-#import "TLTwitterCredential.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+#import "TLAuthUser.h"
 
 @interface TLTwitterAPIClient : NSObject
 
-typedef void (^APIBlock)(BOOL success);
-typedef void (^APISuccessBlock)(id responseObject);
-typedef void (^APIFailureBlock)(NSError *error);
-
-@property (strong, nonatomic) STTwitterAPI *twitterAPI;
-
 + (instancetype)sharedInstance;
-- (void)logInToTwitter;
 
-- (void)getHomeTimeLineWithSuccess:(APISuccessBlock)success failure:(APIFailureBlock)failure;
+- (BOOL)login;
+- (BOOL)logout;
+- (BOOL)getLoginStatus;
 
-- (void)requestTokenWithPin:(NSString *)pin success:(APIBlock)success failure:(APIBlock)failure;
-- (void)verifyCredentials:(APIBlock)success;
+- (void)getiOSTwitterAccount:(void (^)(ACAccount *twitterAccount))completionHandler;
+- (void)getProfileInfoOfAccount:(ACAccount *)account completionHandler:(void (^)(TLAuthUser *authUser))completionHandler;
 
-+ (void)saveCredentials;
-+ (TLTwitterCredential *)retrieveCredentials;
+- (TLAuthUser *)getAuthorizedUser;
 @end
