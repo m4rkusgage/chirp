@@ -23,6 +23,13 @@
 		8C4C1A451EFACA0000DEAD6E /* TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */; };
 		8C4C1A481EFACABC00DEAD6E /* TLAuthUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */; };
 		8C4C1A491EFACABC00DEAD6E /* TLAuthUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */; };
+		8C4C1A4D1EFAE15600DEAD6E /* TLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A4B1EFAE15600DEAD6E /* TLLoginViewController.m */; };
+		8C4C1A591EFAE8DD00DEAD6E /* TLProfileLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A581EFAE8DD00DEAD6E /* TLProfileLoginView.m */; };
+		8C4C1A5B1EFAE94700DEAD6E /* TLProfileLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A5A1EFAE94700DEAD6E /* TLProfileLoginView.xib */; };
+		8C4C1A5F1EFB23AF00DEAD6E /* TLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */; };
+		8C4C1A601EFB23B100DEAD6E /* TLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */; };
+		8C4C1A631EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */; };
+		8C4C1A641EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */; };
 		B0AD1645D273E33549DABDAF /* libPods-ChirpTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +68,16 @@
 		8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUser.m; sourceTree = "<group>"; };
 		8C4C1A461EFACABC00DEAD6E /* TLAuthUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLAuthUser.h; sourceTree = "<group>"; };
 		8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAuthUser.m; sourceTree = "<group>"; };
+		8C4C1A4A1EFAE15600DEAD6E /* TLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLLoginViewController.h; sourceTree = "<group>"; };
+		8C4C1A4B1EFAE15600DEAD6E /* TLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLLoginViewController.m; sourceTree = "<group>"; };
+		8C4C1A571EFAE8DD00DEAD6E /* TLProfileLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLProfileLoginView.h; sourceTree = "<group>"; };
+		8C4C1A581EFAE8DD00DEAD6E /* TLProfileLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLProfileLoginView.m; sourceTree = "<group>"; };
+		8C4C1A5A1EFAE94700DEAD6E /* TLProfileLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLProfileLoginView.xib; sourceTree = "<group>"; };
+		8C4C1A5C1EFB126100DEAD6E /* TLLoginLogoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLLoginLogoutDelegate.h; sourceTree = "<group>"; };
+		8C4C1A5D1EFB23AB00DEAD6E /* TLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBaseViewController.h; sourceTree = "<group>"; };
+		8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBaseViewController.m; sourceTree = "<group>"; };
+		8C4C1A611EFB23F500DEAD6E /* TLHomeTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLHomeTimeLineViewController.h; sourceTree = "<group>"; };
+		8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLHomeTimeLineViewController.m; sourceTree = "<group>"; };
 		BB7C9F27E68F2E3D1A1CA577 /* Pods-Chirp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.release.xcconfig"; sourceTree = "<group>"; };
 		FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChirpTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +161,16 @@
 				8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */,
 				8C4C1A461EFACABC00DEAD6E /* TLAuthUser.h */,
 				8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */,
+				8C4C1A4A1EFAE15600DEAD6E /* TLLoginViewController.h */,
+				8C4C1A4B1EFAE15600DEAD6E /* TLLoginViewController.m */,
+				8C4C1A5D1EFB23AB00DEAD6E /* TLBaseViewController.h */,
+				8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */,
+				8C4C1A611EFB23F500DEAD6E /* TLHomeTimeLineViewController.h */,
+				8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */,
+				8C4C1A571EFAE8DD00DEAD6E /* TLProfileLoginView.h */,
+				8C4C1A581EFAE8DD00DEAD6E /* TLProfileLoginView.m */,
+				8C4C1A5A1EFAE94700DEAD6E /* TLProfileLoginView.xib */,
+				8C4C1A5C1EFB126100DEAD6E /* TLLoginLogoutDelegate.h */,
 			);
 			path = Chirp;
 			sourceTree = "<group>";
@@ -256,6 +283,7 @@
 			files = (
 				8C12F2DF1EF46E580044BDB3 /* LaunchScreen.storyboard in Resources */,
 				8C12F2DC1EF46E580044BDB3 /* Assets.xcassets in Resources */,
+				8C4C1A5B1EFAE94700DEAD6E /* TLProfileLoginView.xib in Resources */,
 				8C4C1A381EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */,
 				8C12F2DA1EF46E570044BDB3 /* Main.storyboard in Resources */,
 			);
@@ -369,9 +397,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C1A631EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */,
 				8C4C1A481EFACABC00DEAD6E /* TLAuthUser.m in Sources */,
 				8C12F2D71EF46E560044BDB3 /* ViewController.m in Sources */,
+				8C4C1A4D1EFAE15600DEAD6E /* TLLoginViewController.m in Sources */,
 				8C12F2D41EF46E560044BDB3 /* AppDelegate.m in Sources */,
+				8C4C1A5F1EFB23AF00DEAD6E /* TLBaseViewController.m in Sources */,
+				8C4C1A591EFAE8DD00DEAD6E /* TLProfileLoginView.m in Sources */,
 				8C12F2D11EF46E550044BDB3 /* main.m in Sources */,
 				8C4C1A3C1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */,
 				8C4C1A441EFACA0000DEAD6E /* TLUser.m in Sources */,
@@ -384,6 +416,8 @@
 			files = (
 				8C12F2EA1EF46E590044BDB3 /* ChirpTests.m in Sources */,
 				8C4C1A491EFACABC00DEAD6E /* TLAuthUser.m in Sources */,
+				8C4C1A641EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */,
+				8C4C1A601EFB23B100DEAD6E /* TLBaseViewController.m in Sources */,
 				8C4C1A451EFACA0000DEAD6E /* TLUser.m in Sources */,
 				8C4C1A3D1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */,
 			);

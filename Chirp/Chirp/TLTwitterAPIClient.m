@@ -7,7 +7,7 @@
 //
 
 #import "TLTwitterAPIClient.h"
-
+#import "MBProgressHUD.h"
 
 @interface TLTwitterAPIClient ()
 @property (strong, nonatomic) TLAuthUser *twitterAccount;
@@ -39,8 +39,10 @@
     return self;
 }
 
-- (void)getiOSTwitterAccount:(void (^)(ACAccount *))completionHandler
+- (void)getiOSTwitterAccountForView:(UIView *)view completionHandler:(void (^)(ACAccount *))completionHandler
 {
+    [MBProgressHUD showHUDAddedTo:view animated:YES];
+    
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
@@ -53,14 +55,20 @@
             {
                 ACAccount *twitterAccount = [arrayOfAccounts objectAtIndex:0];
                 [self.twitterAccount setTwitterAccount:twitterAccount];
-                completionHandler(twitterAccount);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:view animated:YES];
+                    completionHandler(twitterAccount);
+                });
+                
             }
         }
     }];
 }
 
-- (void)getProfileInfoOfAccount:(ACAccount *)account completionHandler:(void (^)(TLAuthUser *))completionHandler
+- (void)getProfileInfoOfAccount:(ACAccount *)account forView:(UIView *)view completionHandler:(void (^)(TLAuthUser *))completionHandler
 {
+    [MBProgressHUD showHUDAddedTo:view animated:YES];
+    
     SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter
                                                        requestMethod:SLRequestMethodGET
                                                                  URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/account/verify_credentials.json"]
@@ -78,7 +86,13 @@
                                                                          error:&error];
                 NSLog(@"%@",twitterData);
                 [self.twitterAccount setDataWith:[twitterData copy]];
-                completionHandler(self.twitterAccount);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:view animated:YES];
+                    completionHandler(self.twitterAccount);
+                });
+                
+                
+                
             }
         });
     }];

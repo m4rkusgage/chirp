@@ -20,8 +20,8 @@
 - (BOOL)logout;
 - (BOOL)getLoginStatus;
 
-- (void)getiOSTwitterAccount:(void (^)(ACAccount *twitterAccount))completionHandler;
-- (void)getProfileInfoOfAccount:(ACAccount *)account completionHandler:(void (^)(TLAuthUser *authUser))completionHandler;
+- (void)getiOSTwitterAccountForView:(UIView *)view completionHandler:(void (^)(ACAccount *twitterAccount))completionHandler;
+- (void)getProfileInfoOfAccount:(ACAccount *)account forView:(UIView *)view completionHandler:(void (^)(TLAuthUser *authUser))completionHandler;
 
 - (TLAuthUser *)getAuthorizedUser;
 @end

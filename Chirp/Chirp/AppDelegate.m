@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TLTwitterAPIClient.h"
+#import "TLLoginViewController.h"
+#import "TLHomeTimeLineViewController.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) TLTwitterAPIClient *apiClient;
@@ -18,11 +20,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    __block UINavigationController *navigationController;
+    [self.window.rootViewController.view setBackgroundColor:[UIColor whiteColor]];
+    
     if ([self.apiClient getLoginStatus]) {
-        
+        TLHomeTimeLineViewController *homeTimeLine = [[TLHomeTimeLineViewController alloc] init];
+        navigationController = [[UINavigationController alloc] initWithRootViewController:homeTimeLine];
+        self.window.rootViewController =nil;
+        self.window.rootViewController = navigationController;
+        [self.window makeKeyAndVisible];
     } else {
+        [self.apiClient getiOSTwitterAccountForView:self.window.rootViewController.view
+                                  completionHandler:^(ACAccount *twitterAccount) {
+                                      [self.apiClient getProfileInfoOfAccount:twitterAccount
+                                                                      forView:self.window.rootViewController.view
+                                                            completionHandler:^(TLAuthUser *authUser) {
+                                                                
+                                                                TLLoginViewController *loginController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+                                                                [loginController loadDataWithAccount:authUser];
+                                                                navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
+                                                                self.window.rootViewController =nil;
+                                                                self.window.rootViewController = navigationController;
+                                                                [self.window makeKeyAndVisible];
+                                      }];
+            
+        }];
         
     }
+    
     
     
     return YES;
