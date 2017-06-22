@@ -119,10 +119,9 @@
     return [cell updateCell];
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row < newTweetCounter) {
-        newTweetCounter = 0;
+    if (indexPath.row == 0) {
         [self hideNotification];
     }
 }
@@ -207,7 +206,7 @@
 
 - (void)showNotification
 {
-    if (newTweetCounter) {
+    if (newTweetCounter > 0) {
         [UIView animateWithDuration:2.0 animations:^{
             [self.notificationLabel setAlpha:1.0];
         }];
