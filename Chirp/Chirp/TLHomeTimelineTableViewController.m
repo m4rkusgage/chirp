@@ -119,10 +119,14 @@
     return [cell updateCell];
 }
 
-- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
         [self hideNotification];
+    }
+    if (indexPath.row == newTweetCounter - 1) {
+        newTweetCounter--;
+        [self.notificationLabel setText:[NSString stringWithFormat:@"%d", newTweetCounter]];
     }
 }
 
@@ -174,9 +178,7 @@
                                           sinceID:lastTweet.tweetID
                                 completionHandler:^(NSArray *tweets) {
                                     if (tweets) {
-                                        newTweetCounter = (int)[tweets count];
-                                        [self.notificationLabel setText:[NSString stringWithFormat:@"%d", newTweetCounter]];
-                                        [self showNotification];
+                                       
                                         //place newer tweets gotten to the front of the array
                                         NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,[tweets count])];
                                         [self.tweetList insertObjects:tweets atIndexes:indexes];
@@ -187,6 +189,9 @@
                                         [self.tableView scrollToRowAtIndexPath:indexPath
                                                               atScrollPosition:UITableViewScrollPositionTop
                                                                       animated:NO];
+                                        newTweetCounter = (int)[tweets count];
+                                        [self.notificationLabel setText:[NSString stringWithFormat:@"%d", newTweetCounter]];
+                                        [self showNotification];
                                     }
                                 }];
     } else {
