@@ -22,6 +22,6 @@
 
 - (void)getiOSTwitterAccountForView:(UIView *)view completionHandler:(void (^)(ACAccount *twitterAccount))completionHandler;
 - (void)getProfileInfoOfAccount:(ACAccount *)account forView:(UIView *)view completionHandler:(void (^)(TLAuthUser *authUser))completionHandler;
-
+- (void)getHomeTimelineForAccount:(ACAccount *)account forView:(UIView *)view sinceID:(NSString *)sinceID completionHandler:(void (^)(NSArray *tweets))completionHandler;
 - (TLAuthUser *)getAuthorizedUser;
 @end

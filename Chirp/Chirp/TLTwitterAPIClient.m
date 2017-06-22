@@ -55,10 +55,10 @@
             {
                 ACAccount *twitterAccount = [arrayOfAccounts objectAtIndex:0];
                 [self.twitterAccount setTwitterAccount:twitterAccount];
-                dispatch_async(dispatch_get_main_queue(), ^{
+                //dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:view animated:YES];
                     completionHandler(twitterAccount);
-                });
+               // });
                 
             }
         }
@@ -86,13 +86,51 @@
                                                                          error:&error];
                 NSLog(@"%@",twitterData);
                 [self.twitterAccount setDataWith:[twitterData copy]];
-                dispatch_async(dispatch_get_main_queue(), ^{
+               // dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:view animated:YES];
                     completionHandler(self.twitterAccount);
-                });
-                
-                
-                
+               // });
+            }
+        });
+    }];
+}
+
+- (void)getHomeTimelineForAccount:(ACAccount *)account forView:(UIView *)view sinceID:(NSString *)sinceID completionHandler:(void (^)(NSArray *))completionHandler
+{
+    [MBProgressHUD showHUDAddedTo:view animated:YES];
+    NSDictionary *paramaters;
+    if ([sinceID length]) {
+        paramaters = @{@"include_entities": @YES,
+                       @"count": @"10",
+                       @"since_id": sinceID,
+                       @"exclude_replies": @YES};
+    } else {
+        paramaters = @{@"include_entities": @YES,
+                       @"count": @"10",
+                       @"exclude_replies": @YES};
+    }
+    SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                                       requestMethod:SLRequestMethodGET
+                                                                 URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/home_timeline.json"]
+                                                          parameters:paramaters];
+    
+    [twitterInfoRequest setAccount:account];
+    
+    [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (responseData) {
+                NSError *error = nil;
+                NSArray *twitterData = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                            options:NSJSONReadingMutableLeaves
+                                                                              error:&error];
+                for (NSDictionary *tweetData in twitterData) {
+                    
+                }
+                NSLog(@"%@",twitterData);
+               // dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:view animated:YES];
+                    completionHandler(twitterData);
+               // });
             }
         });
     }];
