@@ -8,6 +8,7 @@
 
 #import "TLTwitterAPIClient.h"
 #import "MBProgressHUD.h"
+#import "TLTweet.h"
 
 @interface TLTwitterAPIClient ()
 @property (strong, nonatomic) TLAuthUser *twitterAccount;
@@ -55,10 +56,10 @@
             {
                 ACAccount *twitterAccount = [arrayOfAccounts objectAtIndex:0];
                 [self.twitterAccount setTwitterAccount:twitterAccount];
-                //dispatch_async(dispatch_get_main_queue(), ^{
+                dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:view animated:YES];
                     completionHandler(twitterAccount);
-               // });
+                });
                 
             }
         }
@@ -101,12 +102,12 @@
     NSDictionary *paramaters;
     if ([sinceID length]) {
         paramaters = @{@"include_entities": @YES,
-                       @"count": @"10",
+                       @"count": @"100",
                        @"since_id": sinceID,
                        @"exclude_replies": @YES};
     } else {
         paramaters = @{@"include_entities": @YES,
-                       @"count": @"10",
+                       @"count": @"100",
                        @"exclude_replies": @YES};
     }
     SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter
@@ -123,14 +124,22 @@
                 NSArray *twitterData = [NSJSONSerialization JSONObjectWithData:responseData
                                                                             options:NSJSONReadingMutableLeaves
                                                                               error:&error];
-                for (NSDictionary *tweetData in twitterData) {
-                    
-                }
-                NSLog(@"%@",twitterData);
-               // dispatch_async(dispatch_get_main_queue(), ^{
+                if ([twitterData isKindOfClass:[NSArray class]]) {
+                    NSMutableArray *tweetArray = [[NSMutableArray alloc] init];
+                    for (NSDictionary *tweetData in twitterData) {
+                        TLTweet *tweet = [[TLTweet alloc] init];
+                        [tweet setDataWith:tweetData];
+                        [tweetArray addObject:tweet];
+                    }
+                    // dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:view animated:YES];
-                    completionHandler(twitterData);
-               // });
+                    completionHandler(tweetArray);
+                    // });
+                } else {
+                    [MBProgressHUD hideHUDForView:view animated:YES];
+                    completionHandler(nil);
+                }
+                
             }
         });
     }];
@@ -164,6 +173,7 @@
 {
     self.twitterAccount.loginStatus = NO;
     [self saveAuthUser];
+    [self deleteSavedTweets];
     
     return YES;
 }
@@ -177,5 +187,26 @@
 {
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.twitterAccount];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"authUser"];
+}
+
+- (void)saveTweetList:(NSArray *)tweetList
+{
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tweetList];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"postList"];
+}
+
+- (NSArray *)retrieveSavedTweetList
+{
+    NSData *tweetList = [[NSUserDefaults standardUserDefaults] objectForKey:@"postList"];
+    NSArray *postList;
+    if (tweetList) {
+        postList = [NSKeyedUnarchiver unarchiveObjectWithData:tweetList];
+    }
+    return postList;
+}
+
+- (void)deleteSavedTweets
+{
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"postList"];
 }
 @end

@@ -15,7 +15,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    self = [super init];
+    self = [super initWithCoder:decoder];
     if (self) {
         self.twitterAccount = [decoder decodeObjectForKey:@"twitterAccount"];
         self.loginStatus= [decoder decodeBoolForKey:@"loginStatus"];
@@ -25,6 +25,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
+    [super encodeWithCoder:encoder];
     [encoder encodeObject:_twitterAccount forKey:@"twitterAccount"];
     [encoder encodeBool:_loginStatus forKey:@"loginStatus"];
 }

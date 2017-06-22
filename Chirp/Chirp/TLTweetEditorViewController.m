@@ -1,30 +1,22 @@
 //
-//  TLBaseViewController.m
+//  TLTweetEditorViewController.m
 //  Chirp
 //
-//  Created by Mark Gage on 2017-06-21.
+//  Created by Mark Gage on 2017-06-22.
 //  Copyright © 2017 Mark Gage. All rights reserved.
 //
 
-#import "TLBaseViewController.h"
+#import "TLTweetEditorViewController.h"
 
-@interface TLBaseViewController ()
+@interface TLTweetEditorViewController ()
 
 @end
 
-@implementation TLBaseViewController
+@implementation TLTweetEditorViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-   // [self.navigationController setNavigationBarHidden:NO];
-   // [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    //self.navigationController.navigationBar.shadowImage = [UIImage new];
-   // self.navigationController.navigationBar.translucent = YES;
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,10 +26,30 @@
 		8C4C1A4D1EFAE15600DEAD6E /* TLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A4B1EFAE15600DEAD6E /* TLLoginViewController.m */; };
 		8C4C1A591EFAE8DD00DEAD6E /* TLProfileLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A581EFAE8DD00DEAD6E /* TLProfileLoginView.m */; };
 		8C4C1A5B1EFAE94700DEAD6E /* TLProfileLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A5A1EFAE94700DEAD6E /* TLProfileLoginView.xib */; };
-		8C4C1A5F1EFB23AF00DEAD6E /* TLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */; };
-		8C4C1A601EFB23B100DEAD6E /* TLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */; };
-		8C4C1A631EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */; };
-		8C4C1A641EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */; };
+		8C4C1A671EFB711F00DEAD6E /* TLTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A661EFB711F00DEAD6E /* TLTweet.m */; };
+		8C4C1A681EFB712000DEAD6E /* TLTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A661EFB711F00DEAD6E /* TLTweet.m */; };
+		8C4C1A6B1EFB7A2200DEAD6E /* TLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A6A1EFB7A2200DEAD6E /* TLBaseViewController.m */; };
+		8C4C1A6C1EFB7A2200DEAD6E /* TLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A6A1EFB7A2200DEAD6E /* TLBaseViewController.m */; };
+		8C4C1A741EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A721EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m */; };
+		8C4C1A751EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A721EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m */; };
+		8C4C1A7B1EFB817600DEAD6E /* TLTweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A791EFB817600DEAD6E /* TLTweetTableViewCell.m */; };
+		8C4C1A7C1EFB817600DEAD6E /* TLTweetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A791EFB817600DEAD6E /* TLTweetTableViewCell.m */; };
+		8C4C1A7D1EFB817600DEAD6E /* TLTweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A7A1EFB817600DEAD6E /* TLTweetTableViewCell.xib */; };
+		8C4C1A7E1EFB817600DEAD6E /* TLTweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A7A1EFB817600DEAD6E /* TLTweetTableViewCell.xib */; };
+		8C4C1A801EFBA79400DEAD6E /* verified_profile_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A7F1EFBA79400DEAD6E /* verified_profile_img.png */; };
+		8C4C1A811EFBA79400DEAD6E /* verified_profile_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A7F1EFBA79400DEAD6E /* verified_profile_img.png */; };
+		8C4C1A831EFBA79F00DEAD6E /* no_profile_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A821EFBA79F00DEAD6E /* no_profile_img.png */; };
+		8C4C1A841EFBA79F00DEAD6E /* no_profile_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A821EFBA79F00DEAD6E /* no_profile_img.png */; };
+		8C4C1A891EFBAAA400DEAD6E /* twitter_icon_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A881EFBAAA400DEAD6E /* twitter_icon_img.png */; };
+		8C4C1A8A1EFBAAA400DEAD6E /* twitter_icon_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A881EFBAAA400DEAD6E /* twitter_icon_img.png */; };
+		8C4C1A8F1EFBAC3800DEAD6E /* profile_setting_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A8E1EFBAC3800DEAD6E /* profile_setting_img.png */; };
+		8C4C1A901EFBAC3800DEAD6E /* profile_setting_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A8E1EFBAC3800DEAD6E /* profile_setting_img.png */; };
+		8C4C1A921EFBAEA300DEAD6E /* compose_tweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A911EFBAEA200DEAD6E /* compose_tweet.png */; };
+		8C4C1A931EFBAEA300DEAD6E /* compose_tweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C1A911EFBAEA200DEAD6E /* compose_tweet.png */; };
+		8C4C1A961EFBAF7700DEAD6E /* TLTweetButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A951EFBAF7700DEAD6E /* TLTweetButtonView.m */; };
+		8C4C1A971EFBAF7700DEAD6E /* TLTweetButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A951EFBAF7700DEAD6E /* TLTweetButtonView.m */; };
+		8C4C1A9D1EFC406900DEAD6E /* TLTweetEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A9C1EFC406700DEAD6E /* TLTweetEditorViewController.m */; };
+		8C4C1A9E1EFC406A00DEAD6E /* TLTweetEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C1A9C1EFC406700DEAD6E /* TLTweetEditorViewController.m */; };
 		B0AD1645D273E33549DABDAF /* libPods-ChirpTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */; };
 /* End PBXBuildFile section */
 
@@ -74,10 +94,24 @@
 		8C4C1A581EFAE8DD00DEAD6E /* TLProfileLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLProfileLoginView.m; sourceTree = "<group>"; };
 		8C4C1A5A1EFAE94700DEAD6E /* TLProfileLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLProfileLoginView.xib; sourceTree = "<group>"; };
 		8C4C1A5C1EFB126100DEAD6E /* TLLoginLogoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLLoginLogoutDelegate.h; sourceTree = "<group>"; };
-		8C4C1A5D1EFB23AB00DEAD6E /* TLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBaseViewController.h; sourceTree = "<group>"; };
-		8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBaseViewController.m; sourceTree = "<group>"; };
-		8C4C1A611EFB23F500DEAD6E /* TLHomeTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLHomeTimeLineViewController.h; sourceTree = "<group>"; };
-		8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLHomeTimeLineViewController.m; sourceTree = "<group>"; };
+		8C4C1A651EFB711F00DEAD6E /* TLTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTweet.h; sourceTree = "<group>"; };
+		8C4C1A661EFB711F00DEAD6E /* TLTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTweet.m; sourceTree = "<group>"; };
+		8C4C1A691EFB7A2200DEAD6E /* TLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBaseViewController.h; sourceTree = "<group>"; };
+		8C4C1A6A1EFB7A2200DEAD6E /* TLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBaseViewController.m; sourceTree = "<group>"; };
+		8C4C1A711EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLHomeTimelineTableViewController.h; sourceTree = "<group>"; };
+		8C4C1A721EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLHomeTimelineTableViewController.m; sourceTree = "<group>"; };
+		8C4C1A781EFB817600DEAD6E /* TLTweetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTweetTableViewCell.h; sourceTree = "<group>"; };
+		8C4C1A791EFB817600DEAD6E /* TLTweetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTweetTableViewCell.m; sourceTree = "<group>"; };
+		8C4C1A7A1EFB817600DEAD6E /* TLTweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLTweetTableViewCell.xib; sourceTree = "<group>"; };
+		8C4C1A7F1EFBA79400DEAD6E /* verified_profile_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verified_profile_img.png; sourceTree = "<group>"; };
+		8C4C1A821EFBA79F00DEAD6E /* no_profile_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_profile_img.png; sourceTree = "<group>"; };
+		8C4C1A881EFBAAA400DEAD6E /* twitter_icon_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_icon_img.png; sourceTree = "<group>"; };
+		8C4C1A8E1EFBAC3800DEAD6E /* profile_setting_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_setting_img.png; sourceTree = "<group>"; };
+		8C4C1A911EFBAEA200DEAD6E /* compose_tweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compose_tweet.png; sourceTree = "<group>"; };
+		8C4C1A941EFBAF7700DEAD6E /* TLTweetButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTweetButtonView.h; sourceTree = "<group>"; };
+		8C4C1A951EFBAF7700DEAD6E /* TLTweetButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTweetButtonView.m; sourceTree = "<group>"; };
+		8C4C1A9B1EFC406700DEAD6E /* TLTweetEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTweetEditorViewController.h; sourceTree = "<group>"; };
+		8C4C1A9C1EFC406700DEAD6E /* TLTweetEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTweetEditorViewController.m; sourceTree = "<group>"; };
 		BB7C9F27E68F2E3D1A1CA577 /* Pods-Chirp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.release.xcconfig"; sourceTree = "<group>"; };
 		FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChirpTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,16 +195,30 @@
 				8C4C1A431EFAC9FF00DEAD6E /* TLUser.m */,
 				8C4C1A461EFACABC00DEAD6E /* TLAuthUser.h */,
 				8C4C1A471EFACABC00DEAD6E /* TLAuthUser.m */,
+				8C4C1A691EFB7A2200DEAD6E /* TLBaseViewController.h */,
+				8C4C1A6A1EFB7A2200DEAD6E /* TLBaseViewController.m */,
 				8C4C1A4A1EFAE15600DEAD6E /* TLLoginViewController.h */,
 				8C4C1A4B1EFAE15600DEAD6E /* TLLoginViewController.m */,
-				8C4C1A5D1EFB23AB00DEAD6E /* TLBaseViewController.h */,
-				8C4C1A5E1EFB23AC00DEAD6E /* TLBaseViewController.m */,
-				8C4C1A611EFB23F500DEAD6E /* TLHomeTimeLineViewController.h */,
-				8C4C1A621EFB23F500DEAD6E /* TLHomeTimeLineViewController.m */,
 				8C4C1A571EFAE8DD00DEAD6E /* TLProfileLoginView.h */,
 				8C4C1A581EFAE8DD00DEAD6E /* TLProfileLoginView.m */,
 				8C4C1A5A1EFAE94700DEAD6E /* TLProfileLoginView.xib */,
 				8C4C1A5C1EFB126100DEAD6E /* TLLoginLogoutDelegate.h */,
+				8C4C1A651EFB711F00DEAD6E /* TLTweet.h */,
+				8C4C1A661EFB711F00DEAD6E /* TLTweet.m */,
+				8C4C1A711EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.h */,
+				8C4C1A721EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m */,
+				8C4C1A781EFB817600DEAD6E /* TLTweetTableViewCell.h */,
+				8C4C1A791EFB817600DEAD6E /* TLTweetTableViewCell.m */,
+				8C4C1A7A1EFB817600DEAD6E /* TLTweetTableViewCell.xib */,
+				8C4C1A821EFBA79F00DEAD6E /* no_profile_img.png */,
+				8C4C1A941EFBAF7700DEAD6E /* TLTweetButtonView.h */,
+				8C4C1A951EFBAF7700DEAD6E /* TLTweetButtonView.m */,
+				8C4C1A7F1EFBA79400DEAD6E /* verified_profile_img.png */,
+				8C4C1A881EFBAAA400DEAD6E /* twitter_icon_img.png */,
+				8C4C1A8E1EFBAC3800DEAD6E /* profile_setting_img.png */,
+				8C4C1A911EFBAEA200DEAD6E /* compose_tweet.png */,
+				8C4C1A9B1EFC406700DEAD6E /* TLTweetEditorViewController.h */,
+				8C4C1A9C1EFC406700DEAD6E /* TLTweetEditorViewController.m */,
 			);
 			path = Chirp;
 			sourceTree = "<group>";
@@ -281,10 +329,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C1A921EFBAEA300DEAD6E /* compose_tweet.png in Resources */,
 				8C12F2DF1EF46E580044BDB3 /* LaunchScreen.storyboard in Resources */,
 				8C12F2DC1EF46E580044BDB3 /* Assets.xcassets in Resources */,
+				8C4C1A891EFBAAA400DEAD6E /* twitter_icon_img.png in Resources */,
 				8C4C1A5B1EFAE94700DEAD6E /* TLProfileLoginView.xib in Resources */,
+				8C4C1A7D1EFB817600DEAD6E /* TLTweetTableViewCell.xib in Resources */,
+				8C4C1A801EFBA79400DEAD6E /* verified_profile_img.png in Resources */,
 				8C4C1A381EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */,
+				8C4C1A831EFBA79F00DEAD6E /* no_profile_img.png in Resources */,
+				8C4C1A8F1EFBAC3800DEAD6E /* profile_setting_img.png in Resources */,
 				8C12F2DA1EF46E570044BDB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +347,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C1A901EFBAC3800DEAD6E /* profile_setting_img.png in Resources */,
+				8C4C1A931EFBAEA300DEAD6E /* compose_tweet.png in Resources */,
+				8C4C1A8A1EFBAAA400DEAD6E /* twitter_icon_img.png in Resources */,
+				8C4C1A811EFBA79400DEAD6E /* verified_profile_img.png in Resources */,
 				8C4C1A391EF9A6EB00DEAD6E /* TwitterConfig.plist in Resources */,
+				8C4C1A841EFBA79F00DEAD6E /* no_profile_img.png in Resources */,
+				8C4C1A7E1EFB817600DEAD6E /* TLTweetTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,12 +457,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4C1A631EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */,
+				8C4C1A961EFBAF7700DEAD6E /* TLTweetButtonView.m in Sources */,
+				8C4C1A671EFB711F00DEAD6E /* TLTweet.m in Sources */,
 				8C4C1A481EFACABC00DEAD6E /* TLAuthUser.m in Sources */,
+				8C4C1A7B1EFB817600DEAD6E /* TLTweetTableViewCell.m in Sources */,
 				8C12F2D71EF46E560044BDB3 /* ViewController.m in Sources */,
+				8C4C1A9D1EFC406900DEAD6E /* TLTweetEditorViewController.m in Sources */,
+				8C4C1A741EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m in Sources */,
 				8C4C1A4D1EFAE15600DEAD6E /* TLLoginViewController.m in Sources */,
+				8C4C1A6B1EFB7A2200DEAD6E /* TLBaseViewController.m in Sources */,
 				8C12F2D41EF46E560044BDB3 /* AppDelegate.m in Sources */,
-				8C4C1A5F1EFB23AF00DEAD6E /* TLBaseViewController.m in Sources */,
 				8C4C1A591EFAE8DD00DEAD6E /* TLProfileLoginView.m in Sources */,
 				8C12F2D11EF46E550044BDB3 /* main.m in Sources */,
 				8C4C1A3C1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */,
@@ -414,12 +478,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C1A7C1EFB817600DEAD6E /* TLTweetTableViewCell.m in Sources */,
 				8C12F2EA1EF46E590044BDB3 /* ChirpTests.m in Sources */,
+				8C4C1A751EFB7C4900DEAD6E /* TLHomeTimelineTableViewController.m in Sources */,
 				8C4C1A491EFACABC00DEAD6E /* TLAuthUser.m in Sources */,
-				8C4C1A641EFB23F500DEAD6E /* TLHomeTimeLineViewController.m in Sources */,
-				8C4C1A601EFB23B100DEAD6E /* TLBaseViewController.m in Sources */,
+				8C4C1A681EFB712000DEAD6E /* TLTweet.m in Sources */,
+				8C4C1A971EFBAF7700DEAD6E /* TLTweetButtonView.m in Sources */,
 				8C4C1A451EFACA0000DEAD6E /* TLUser.m in Sources */,
+				8C4C1A9E1EFC406A00DEAD6E /* TLTweetEditorViewController.m in Sources */,
 				8C4C1A3D1EF9A78700DEAD6E /* TLTwitterAPIClient.m in Sources */,
+				8C4C1A6C1EFB7A2200DEAD6E /* TLBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

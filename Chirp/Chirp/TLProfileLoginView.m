@@ -20,9 +20,7 @@
     
     [self.profileImageView.layer setCornerRadius:8.0];
     [self.profileImageView.layer setMasksToBounds:YES];
-    
-    [self.userScreenNameLabel setTextAlignment:NSTextAlignmentCenter];
-    
+        
     [self.loginButton.layer setCornerRadius:5.0];
     [self.loginButton setBackgroundColor:[UIColor blueColor]];
     [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
