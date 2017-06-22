@@ -8,7 +8,7 @@
 
 #import "TLLoginViewController.h"
 #import "UIKit+AFNetworking.h"
-#import "TLHomeTimeLineViewController.h"
+#import "TLHomeTimelineTableViewController.h"
 
 @interface TLLoginViewController ()
 @property (weak, nonatomic) IBOutlet TLProfileLoginView *loginView;
@@ -22,15 +22,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationController setNavigationBarHidden:YES];
     
     [self.view addSubview:[[[NSBundle mainBundle] loadNibNamed:@"TLProfileLoginView" owner:self options:nil] lastObject]];
-    
-    [self.loginView.userScreenNameLabel setText:[NSString stringWithFormat:@"@%@",self.twitterUser.userScreenName]];
-    [self.loginView.loginButton setTitle:[[NSString stringWithFormat:@"Log in as %@",self.twitterUser.userName] uppercaseString] forState:UIControlStateNormal];
-    [self.loginView.profileImageView setImageWithURL:[NSURL URLWithString:self.twitterUser.profileImageURL]];
-    
-    self.loginView.delegate = self;
+    [self updateUI];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,12 +55,22 @@
 - (void)loadDataWithAccount:(TLAuthUser *)account
 {
     self.twitterUser = account;
+    [self updateUI];
 }
 
 - (void)loginButtonWasPressed:(UIButton *)button
 {
     [self.apiClient login];
-    TLHomeTimeLineViewController *homeTimeLineController = [[TLHomeTimeLineViewController alloc] init];
+    TLHomeTimelineTableViewController *homeTimeLineController = [[TLHomeTimelineTableViewController alloc] init];
     [self.navigationController pushViewController:homeTimeLineController animated:YES];
+}
+
+- (void)updateUI
+{
+    [self.loginView.userScreenNameLabel setText:[NSString stringWithFormat:@"@%@",self.twitterUser.userScreenName]];
+    [self.loginView.loginButton setTitle:[[NSString stringWithFormat:@"Log in as %@",self.twitterUser.userName] uppercaseString] forState:UIControlStateNormal];
+    [self.loginView.profileImageView setImageWithURL:[NSURL URLWithString:self.twitterUser.profileImageURL]];
+    
+    self.loginView.delegate = self;
 }
 @end

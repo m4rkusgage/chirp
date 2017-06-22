@@ -24,4 +24,7 @@
 - (void)getProfileInfoOfAccount:(ACAccount *)account forView:(UIView *)view completionHandler:(void (^)(TLAuthUser *authUser))completionHandler;
 - (void)getHomeTimelineForAccount:(ACAccount *)account forView:(UIView *)view sinceID:(NSString *)sinceID completionHandler:(void (^)(NSArray *tweets))completionHandler;
 - (TLAuthUser *)getAuthorizedUser;
+
+- (void)saveTweetList:(NSArray *)tweetList;
+- (NSArray *)retrieveSavedTweetList;
 @end
