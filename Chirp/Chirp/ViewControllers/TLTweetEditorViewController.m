@@ -11,7 +11,11 @@
 #import "UIKit+AFNetworking.h"
 
 @interface TLTweetEditorViewController ()<TLTweetPostDelegate>
-@property (strong, nonatomic) IBOutlet TLTweetEditorView *editorView;
+{
+    BOOL isAllowedToPost;
+}
+
+@property (weak, nonatomic) IBOutlet TLTweetEditorView *editorView;
 @property (strong, nonatomic) TLTwitterAPIClient *apiClient;
 @property (strong, nonatomic) TLAuthUser *twitterUser;
 @property (strong, nonatomic) UIBarButtonItem *postButton;
@@ -31,6 +35,8 @@
     self.navigationItem.rightBarButtonItem = self.postButton;
     
     [self.view addSubview:[[[NSBundle mainBundle] loadNibNamed:@"TLTweetEditorView" owner:self options:nil] lastObject]];
+    
+    [self updateUI];
 }
 
 - (TLTwitterAPIClient *)apiClient
@@ -55,10 +61,10 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setFrame:CGRectMake(10.0, 2.0, 45.0, 40.0)];
         [button addTarget:self action:@selector(postTweetEditorButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [button setTitle:@"TWEET" forState:UIControlStateNormal];
+        [button setTitle:@"post" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
         _postButton = [[UIBarButtonItem alloc]initWithCustomView:button];
-        [_postButton setEnabled:NO];
     }
     return _postButton;
 }
@@ -70,6 +76,7 @@
         [button setFrame:CGRectMake(10.0, 2.0, 45.0, 40.0)];
         [button addTarget:self action:@selector(cancelEditorButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"X" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
         _cancelButton = [[UIBarButtonItem alloc]initWithCustomView:button];
     }
@@ -95,20 +102,30 @@
 
 - (void)postTweetEditorButtonPressed:(id)sender
 {
-    NSLog(@"LETS POST");
-    [self.postParamaters addEntriesFromDictionary:[self getParamaters]];
+    if (isAllowedToPost) {
+        [self.postParamaters addEntriesFromDictionary:[self getParamaters]];
+        [self.apiClient postTweetForAccount:self.twitterUser.twitterAccount WithParamaters:self.postParamaters forView:self.navigationController.view completionHandler:^(TLTweet *tweetPost) {
+            [self postedTweet:tweetPost];
+        }];
+    }
 }
 
 - (void)enableEditorToSendTweetPost:(BOOL)enable
 {
-    [self.postButton setEnabled:enable];
+    isAllowedToPost = enable;
 }
 
 - (NSDictionary *)getParamaters
 {
-    NSDictionary *paramaters = @{};
-    
+    NSDictionary *paramaters = @{@"status":self.editorView.tweetEditorTextView.text};
     return paramaters;
 }
 
+- (void)postedTweet:(TLTweet *)tweet
+{
+    if ([self delegate] && [[self delegate] respondsToSelector:@selector(newPostedTweet:)]) {
+        [self.delegate newPostedTweet:tweet];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 @end

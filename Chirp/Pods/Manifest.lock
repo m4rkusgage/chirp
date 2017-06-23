@@ -14,23 +14,16 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AFOAuth2Manager (3.0.0):
-    - AFNetworking/NSURLSession (~> 3.0)
   - MBProgressHUD (1.0.0)
-  - STTwitter (0.2.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
-  - AFOAuth2Manager (~> 3.0)
   - MBProgressHUD (~> 1.0.0)
-  - STTwitter
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AFOAuth2Manager: 0566da1be64883e339813d411229fdc9a84dab7c
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  STTwitter: 30ee2f79eff78c3d633a1edc869e97db9c9ead59
 
-PODFILE CHECKSUM: 7d3c75742fe5de88ea91fe58e9af4a0345ff01ba
+PODFILE CHECKSUM: 36e07b583dc89a6eeb5a3a29f3335148676da804
 
 COCOAPODS: 1.2.1

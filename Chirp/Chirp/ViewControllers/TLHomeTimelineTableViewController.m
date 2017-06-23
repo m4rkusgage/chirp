@@ -14,7 +14,7 @@
 #import "TLTweetEditorViewController.h"
 #import "TLTweetPostDelegate.h"
 
-@interface TLHomeTimelineTableViewController ()<UITableViewDelegate, UITableViewDataSource, TLTweetPostDelegate>
+@interface TLHomeTimelineTableViewController ()<UITableViewDelegate, UITableViewDataSource, TLTweetPostDelegate, TLTweetEditorViewControllerDelegate>
 {
     int newTweetCounter;
 }
@@ -143,10 +143,19 @@
 - (void)composeTweetWasPressed
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+   
     TLTweetEditorViewController *editor = [storyboard instantiateViewControllerWithIdentifier:@"TweetEditorViewController"];
+    [editor setDelegate:self];
     [editor loadDataWithAccount:[self.apiClient getAuthorizedUser]];
     
     [self.navigationController pushViewController:editor animated:YES];
+}
+
+- (void)newPostedTweet:(TLTweet *)tweet
+{
+    [self.tweetList insertObject:tweet atIndex:0];
+    [self.apiClient saveTweetList:self.tweetList];
+    [self.tableView reloadData];
 }
 
 - (void)showProfileOpitions:(id)sender

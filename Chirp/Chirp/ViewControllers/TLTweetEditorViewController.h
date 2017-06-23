@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TLTwitterAPIClient.h"
 
+@protocol TLTweetEditorViewControllerDelegate <NSObject>
+- (void)newPostedTweet:(TLTweet *)tweet;
+@end
+
 @interface TLTweetEditorViewController : UIViewController
+
+@property (assign, nonatomic) id<TLTweetEditorViewControllerDelegate> delegate;
 
 - (void)loadDataWithAccount:(TLAuthUser *)account;
 

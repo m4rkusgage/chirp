@@ -11,6 +11,7 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "TLAuthUser.h"
+#import "TLTweet.h"
 
 @interface TLTwitterAPIClient : NSObject
 
@@ -25,6 +26,7 @@
 - (void)getiOSTwitterAccountForView:(UIView *)view completionHandler:(void (^)(ACAccount *twitterAccount))completionHandler;
 - (void)getProfileInfoOfAccount:(ACAccount *)account forView:(UIView *)view completionHandler:(void (^)(TLAuthUser *authUser))completionHandler;
 - (void)getHomeTimelineForAccount:(ACAccount *)account forView:(UIView *)view sinceID:(NSString *)sinceID completionHandler:(void (^)(NSArray *tweets))completionHandler;
+- (void)postTweetForAccount:(ACAccount *)account WithParamaters:(NSDictionary *)params forView:(UIView *)view completionHandler:(void (^)(TLTweet *tweetPost))completionHandler;
 
 - (void)saveTweetList:(NSArray *)tweetList;
 - (NSArray *)retrieveSavedTweetList;

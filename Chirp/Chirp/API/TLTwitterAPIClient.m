@@ -152,6 +152,35 @@
     }];
 }
 
+- (void)postTweetForAccount:(ACAccount *)account WithParamaters:(NSDictionary *)params forView:(UIView *)view completionHandler:(void (^)(TLTweet *))completionHandler
+{
+    [MBProgressHUD showHUDAddedTo:view animated:YES];
+    
+    SLRequest *twitterInfoRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                                       requestMethod:SLRequestMethodPOST
+                                                                 URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/update.json"]
+                                                          parameters:params];
+    
+    [twitterInfoRequest setAccount:account];
+    
+    [twitterInfoRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (responseData) {
+                NSError *error = nil;
+                NSDictionary *tweetData = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                       options:NSJSONReadingMutableLeaves
+                                                                         error:&error];
+                
+                TLTweet *tweet = [[TLTweet alloc] init];
+                [tweet setDataWith:tweetData];
+                
+                [MBProgressHUD hideHUDForView:view animated:YES];
+                completionHandler(tweet);
+            }
+        });
+    }];
+}
+
 - (BOOL)login
 {
     if ([self.twitterAccount twitterAccount]) {
