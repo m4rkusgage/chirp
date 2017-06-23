@@ -21,16 +21,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    __block UINavigationController *navigationController;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    __block UINavigationController *navigationController;
     [self.window.rootViewController.view setBackgroundColor:[UIColor whiteColor]];
     
     TLLoginViewController *loginController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     
     navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
     self.window.rootViewController = navigationController;
-    
     
     if ([self.apiClient getLoginStatus]) {
         [loginController loadDataWithAccount:[self.apiClient getAuthorizedUser]];
@@ -49,12 +48,9 @@
                                                                 [self.window makeKeyAndVisible];
                                                                 
                                       }];
-            
         }];
         
     }
-    
-    
     
     return YES;
 }

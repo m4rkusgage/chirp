@@ -8,10 +8,6 @@
 
 #import "TLProfileLoginView.h"
 
-@interface TLProfileLoginView ()
-
-@end
-
 @implementation TLProfileLoginView
 
 - (void)awakeFromNib

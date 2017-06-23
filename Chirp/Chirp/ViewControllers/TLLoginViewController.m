@@ -44,6 +44,7 @@
     return YES;
 }
 
+#pragma mark - Lazy Instantiation
 - (TLTwitterAPIClient *)apiClient
 {
     if (!_apiClient) {
@@ -58,13 +59,6 @@
     [self updateUI];
 }
 
-- (void)loginButtonWasPressed:(UIButton *)button
-{
-    [self.apiClient login];
-    TLHomeTimelineTableViewController *homeTimeLineController = [[TLHomeTimelineTableViewController alloc] init];
-    [self.navigationController pushViewController:homeTimeLineController animated:YES];
-}
-
 - (void)updateUI
 {
     [self.loginView.userScreenNameLabel setText:[NSString stringWithFormat:@"@%@",self.twitterUser.userScreenName]];
@@ -72,5 +66,13 @@
     [self.loginView.profileImageView setImageWithURL:[NSURL URLWithString:self.twitterUser.profileImageURL]];
     
     self.loginView.delegate = self;
+}
+
+#pragma mark - Button Actions
+- (void)loginButtonWasPressed:(UIButton *)button
+{
+    [self.apiClient login];
+    TLHomeTimelineTableViewController *homeTimeLineController = [[TLHomeTimelineTableViewController alloc] init];
+    [self.navigationController pushViewController:homeTimeLineController animated:YES];
 }
 @end

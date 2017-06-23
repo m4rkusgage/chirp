@@ -11,7 +11,7 @@
 
 @interface TLAuthUser : TLUser<NSCoding>
 
-@property (strong, nonatomic) ACAccount *twitterAccount;
 @property (assign, nonatomic, getter=getLoginStatus) BOOL loginStatus;
+@property (strong, nonatomic) ACAccount *twitterAccount;
 
 @end

@@ -11,9 +11,10 @@
 
 @interface TLProfileLoginView : UIView
 
-@property (assign, nonatomic) id<TLLoginLogoutDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userScreenNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+@property (assign, nonatomic) id<TLLoginLogoutDelegate> delegate;
 
 @end

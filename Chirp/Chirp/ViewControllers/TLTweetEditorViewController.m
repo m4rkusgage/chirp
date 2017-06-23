@@ -26,18 +26,11 @@
     
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationItem setTitle:@"New Tweet Post"];
-    // Do any additional setup after loading the view.
     
     self.navigationItem.leftBarButtonItem = self.cancelButton;
     self.navigationItem.rightBarButtonItem = self.postButton;
     
     [self.view addSubview:[[[NSBundle mainBundle] loadNibNamed:@"TLTweetEditorView" owner:self options:nil] lastObject]];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (TLTwitterAPIClient *)apiClient
@@ -117,4 +110,5 @@
     
     return paramaters;
 }
+
 @end

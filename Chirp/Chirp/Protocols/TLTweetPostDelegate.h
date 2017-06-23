@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @protocol TLTweetPostDelegate <NSObject>
+
+@optional
+- (void)composeTweetWasPressed;
 - (void)enableEditorToSendTweetPost:(BOOL)enable;
+
 @end

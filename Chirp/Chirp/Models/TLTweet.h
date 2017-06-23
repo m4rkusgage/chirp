@@ -17,4 +17,5 @@
 @property (strong, nonatomic) TLUser *postedByUser;
 
 - (void)setDataWith:(NSDictionary *)dictionary;
+
 @end
