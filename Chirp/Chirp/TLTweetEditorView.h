@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TLTweetPostDelegate.h"
 
 @interface TLTweetEditorView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;
 @property (weak, nonatomic) IBOutlet UITextView *tweetEditorTextView;
 @property (weak, nonatomic) IBOutlet UILabel *characterCounterLabel;
+
+@property (assign, nonatomic) id<TLTweetPostDelegate> delegate;
 
 @end

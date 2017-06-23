@@ -119,6 +119,7 @@
 		8C4C1A9F1EFC4A0B00DEAD6E /* TLTweetEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTweetEditorView.h; sourceTree = "<group>"; };
 		8C4C1AA01EFC4A0B00DEAD6E /* TLTweetEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTweetEditorView.m; sourceTree = "<group>"; };
 		8C4C1AA61EFC4B0900DEAD6E /* TLTweetEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLTweetEditorView.xib; sourceTree = "<group>"; };
+		8C4C1AA91EFD571900DEAD6E /* TLTweetPostDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTweetPostDelegate.h; sourceTree = "<group>"; };
 		BB7C9F27E68F2E3D1A1CA577 /* Pods-Chirp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.release.xcconfig"; sourceTree = "<group>"; };
 		FBD31499B5401A2583398DC0 /* libPods-ChirpTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChirpTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -226,6 +227,7 @@
 				8C4C1A911EFBAEA200DEAD6E /* compose_tweet.png */,
 				8C4C1A9B1EFC406700DEAD6E /* TLTweetEditorViewController.h */,
 				8C4C1A9C1EFC406700DEAD6E /* TLTweetEditorViewController.m */,
+				8C4C1AA91EFD571900DEAD6E /* TLTweetPostDelegate.h */,
 				8C4C1A9F1EFC4A0B00DEAD6E /* TLTweetEditorView.h */,
 				8C4C1AA01EFC4A0B00DEAD6E /* TLTweetEditorView.m */,
 				8C4C1AA61EFC4B0900DEAD6E /* TLTweetEditorView.xib */,
