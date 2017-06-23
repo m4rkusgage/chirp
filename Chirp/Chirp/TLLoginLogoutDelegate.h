@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol TLLoginLogoutDelegate;
-
 @protocol TLLoginLogoutDelegate <NSObject>
 
 @optional

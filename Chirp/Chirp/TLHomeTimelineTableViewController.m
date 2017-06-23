@@ -12,41 +12,31 @@
 #import "TLTweet.h"
 #import "TLTweetButtonView.h"
 #import "TLTweetEditorViewController.h"
+#import "TLTweetPostDelegate.h"
 
-@interface TLHomeTimelineTableViewController ()<UITableViewDelegate, UITableViewDataSource, TLTweetDelegate>
+@interface TLHomeTimelineTableViewController ()<UITableViewDelegate, UITableViewDataSource, TLTweetPostDelegate>
 {
     int newTweetCounter;
 }
 @property (strong, nonatomic) TLTwitterAPIClient *apiClient;
-@property (strong, nonatomic) NSMutableArray *tweetList;
 @property (strong, nonatomic) TLTweetButtonView *tweetButton;
+@property (strong, nonatomic) NSMutableArray *tweetList;
 @property (strong, nonatomic) UILabel *notificationLabel;
+@property (strong, nonatomic) UIBarButtonItem *userSettingButton;
 @end
 
 @implementation TLHomeTimelineTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:self.tweetButton];
     [self.view addSubview:self.notificationLabel];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateData)
-                                                 name:UIApplicationDidBecomeActiveNotification
-                                               object:nil];
-    
     [self.navigationItem setTitle:@"Tweet Land"];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(10.0, 2.0, 45.0, 40.0)];
-    [button addTarget:self action:@selector(showProfileOpitions:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"profile_setting_img.png"] forState:UIControlStateNormal];
-    UIBarButtonItem *button1 = [[UIBarButtonItem alloc]initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = button1;
-    
-    
+    self.navigationItem.leftBarButtonItem = self.userSettingButton;
     [self.navigationController setNavigationBarHidden:NO];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TLTweetTableViewCell" bundle:nil]
@@ -56,8 +46,14 @@
     self.tableView.estimatedRowHeight = 150;
     
     [self updateData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateData)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 }
 
+#pragma mark - Lazy Instantiation
 - (TLTwitterAPIClient *)apiClient
 {
     if (!_apiClient) {
@@ -95,13 +91,20 @@
     return _notificationLabel;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UIBarButtonItem *)userSettingButton
+{
+    if (!_userSettingButton) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setFrame:CGRectMake(10.0, 2.0, 45.0, 40.0)];
+        [button addTarget:self action:@selector(showProfileOpitions:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"profile_setting_img.png"] forState:UIControlStateNormal];
+        
+        _userSettingButton = [[UIBarButtonItem alloc]initWithCustomView:button];
+    }
+    return _userSettingButton;
 }
 
-#pragma mark - Table view data source
-
+#pragma mark - UITableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -109,7 +112,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.tweetList count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TLTweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetCell" forIndexPath:indexPath];
@@ -136,6 +138,7 @@
     self.tweetButton.transform = CGAffineTransformMakeTranslation(0, self.tableView.contentOffset.y);
     self.notificationLabel.transform = CGAffineTransformMakeTranslation(0, self.tableView.contentOffset.y);
 }
+
 
 - (void)composeTweetWasPressed
 {
@@ -171,7 +174,6 @@
 
 - (void)updateData
 {
-    NSLog(@"update data!!!");
     if ([self.apiClient retrieveSavedTweetList]) {
         [self.tweetList addObjectsFromArray:[self.apiClient retrieveSavedTweetList]];
         [self.tableView reloadData];

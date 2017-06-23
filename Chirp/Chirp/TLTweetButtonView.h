@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol TLTweetDelegate <NSObject>
-- (void)composeTweetWasPressed;
-@end
+#import "TLTweetPostDelegate.h"
 
 @interface TLTweetButtonView : UIView
-@property (assign, nonatomic) id<TLTweetDelegate> delegate;
+
+@property (assign, nonatomic) id<TLTweetPostDelegate> delegate;
+
 @end

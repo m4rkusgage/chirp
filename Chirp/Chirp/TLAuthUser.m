@@ -8,9 +8,6 @@
 
 #import "TLAuthUser.h"
 
-@interface TLAuthUser ()
-@end
-
 @implementation TLAuthUser
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -34,4 +31,5 @@
 {
     return _loginStatus;
 }
+
 @end

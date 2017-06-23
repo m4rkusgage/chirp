@@ -40,6 +40,19 @@
     return self;
 }
 
+- (TLAuthUser *)twitterAccount
+{
+    if (!_twitterAccount) {
+        _twitterAccount = [[TLAuthUser alloc] init];
+    }
+    return _twitterAccount;
+}
+
+- (TLAuthUser *)getAuthorizedUser
+{
+    return self.twitterAccount;
+}
+
 - (void)getiOSTwitterAccountForView:(UIView *)view completionHandler:(void (^)(ACAccount *))completionHandler
 {
     [MBProgressHUD showHUDAddedTo:view animated:YES];
@@ -85,12 +98,9 @@
                 NSDictionary *twitterData = [NSJSONSerialization JSONObjectWithData:responseData
                                                                        options:NSJSONReadingMutableLeaves
                                                                          error:&error];
-                NSLog(@"%@",twitterData);
                 [self.twitterAccount setDataWith:[twitterData copy]];
-               // dispatch_async(dispatch_get_main_queue(), ^{
-                    [MBProgressHUD hideHUDForView:view animated:YES];
-                    completionHandler(self.twitterAccount);
-               // });
+                [MBProgressHUD hideHUDForView:view animated:YES];
+                completionHandler(self.twitterAccount);
             }
         });
     }];
@@ -131,31 +141,15 @@
                         [tweet setDataWith:tweetData];
                         [tweetArray addObject:tweet];
                     }
-                    // dispatch_async(dispatch_get_main_queue(), ^{
                     [MBProgressHUD hideHUDForView:view animated:YES];
                     completionHandler(tweetArray);
-                    // });
                 } else {
                     [MBProgressHUD hideHUDForView:view animated:YES];
                     completionHandler(nil);
                 }
-                
             }
         });
     }];
-}
-
-- (TLAuthUser *)twitterAccount
-{
-    if (!_twitterAccount) {
-        _twitterAccount = [[TLAuthUser alloc] init];
-    }
-    return _twitterAccount;
-}
-
-- (TLAuthUser *)getAuthorizedUser
-{
-    return self.twitterAccount;
 }
 
 - (BOOL)login
@@ -209,4 +203,5 @@
 {
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"postList"];
 }
+
 @end
