@@ -57,7 +57,7 @@
         <!--Home Timeline Table View Controller-->
         <scene sceneID="zYu-wz-AzK">
             <objects>
-                <tableViewController id="2jI-g9-PCC" customClass="TLHomeTimelineTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HomeTimelineTableViewController" id="2jI-g9-PCC" customClass="TLHomeTimelineTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="HWF-zW-TyT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,6 +90,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hjb-dA-Yg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="316" y="223"/>
+        </scene>
+        <!--Tweet Editor View Controller-->
+        <scene sceneID="D1d-o4-Imr">
+            <objects>
+                <viewController storyboardIdentifier="TweetEditorViewController" id="hqu-Me-n7i" customClass="TLTweetEditorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7dk-it-Rqm"/>
+                        <viewControllerLayoutGuide type="bottom" id="oES-YD-Omi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AlF-cp-kfB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sxA-1g-ELf" customClass="TLTweetEditorView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="editorView" destination="sxA-1g-ELf" id="MBr-wP-ybP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mi4-sQ-nHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133.5999999999999" y="243.32833583208398"/>
         </scene>
     </scenes>
 </document>

@@ -11,6 +11,7 @@
 #import "TLTweetTableViewCell.h"
 #import "TLTweet.h"
 #import "TLTweetButtonView.h"
+#import "TLTweetEditorViewController.h"
 
 @interface TLHomeTimelineTableViewController ()<UITableViewDelegate, UITableViewDataSource, TLTweetDelegate>
 {
@@ -138,7 +139,11 @@
 
 - (void)composeTweetWasPressed
 {
-    NSLog(@"COMPOSE");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TLTweetEditorViewController *editor = [storyboard instantiateViewControllerWithIdentifier:@"TweetEditorViewController"];
+    [editor loadDataWithAccount:[self.apiClient getAuthorizedUser]];
+    
+    [self.navigationController pushViewController:editor animated:YES];
 }
 
 - (void)showProfileOpitions:(id)sender
