@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TLTwitterAPIClient.h"
 
 @interface TLTweetEditorViewController : UIViewController
-
+- (void)loadDataWithAccount:(TLAuthUser *)account;
 @end
