@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1BE1964E1C69DAE236A65692 /* libPods-Chirp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA06A25A0A55EE1A86938A6 /* libPods-Chirp.a */; };
+		8C04C87C1EFDAD23008D2392 /* TLAPITestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C87B1EFDAD23008D2392 /* TLAPITestCase.m */; };
+		8C04C8861EFDB828008D2392 /* TLUserTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C8851EFDB828008D2392 /* TLUserTestCases.m */; };
+		8C04C8881EFDB84A008D2392 /* TLStringCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C8871EFDB84A008D2392 /* TLStringCategoryTest.m */; };
+		8C04C88A1EFDBF65008D2392 /* TLTweetTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C8891EFDBF64008D2392 /* TLTweetTestCases.m */; };
+		8C04C8911EFDC2B6008D2392 /* NSDictionary+JsonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C04C8901EFDC2B6008D2392 /* NSDictionary+JsonUtility.m */; };
 		8C12F2D11EF46E550044BDB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C12F2D01EF46E550044BDB3 /* main.m */; };
 		8C12F2D41EF46E560044BDB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C12F2D31EF46E560044BDB3 /* AppDelegate.m */; };
 		8C12F2DA1EF46E570044BDB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C12F2D81EF46E570044BDB3 /* Main.storyboard */; };
 		8C12F2DC1EF46E580044BDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C12F2DB1EF46E580044BDB3 /* Assets.xcassets */; };
 		8C12F2DF1EF46E580044BDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C12F2DD1EF46E580044BDB3 /* LaunchScreen.storyboard */; };
-		8C12F2EA1EF46E590044BDB3 /* ChirpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C12F2E91EF46E590044BDB3 /* ChirpTests.m */; };
 		8CE6FAC11EFD77EB005BD36D /* TLTwitterAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6FABF1EFD77EB005BD36D /* TLTwitterAPIClient.m */; };
 		8CE6FAC21EFD77EB005BD36D /* TLTwitterAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6FABF1EFD77EB005BD36D /* TLTwitterAPIClient.m */; };
 		8CE6FAC31EFD77EB005BD36D /* TwitterConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6FAC01EFD77EB005BD36D /* TwitterConfig.plist */; };
@@ -76,6 +80,12 @@
 		139917D3C26A9CD0F67B85D9 /* Pods-ChirpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChirpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChirpTests/Pods-ChirpTests.release.xcconfig"; sourceTree = "<group>"; };
 		1AA06A25A0A55EE1A86938A6 /* libPods-Chirp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chirp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F611F31AE2114BE4CFDE34C /* Pods-Chirp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.debug.xcconfig"; sourceTree = "<group>"; };
+		8C04C87B1EFDAD23008D2392 /* TLAPITestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLAPITestCase.m; sourceTree = "<group>"; };
+		8C04C8851EFDB828008D2392 /* TLUserTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserTestCases.m; sourceTree = "<group>"; };
+		8C04C8871EFDB84A008D2392 /* TLStringCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLStringCategoryTest.m; sourceTree = "<group>"; };
+		8C04C8891EFDBF64008D2392 /* TLTweetTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTweetTestCases.m; sourceTree = "<group>"; };
+		8C04C88F1EFDC2B6008D2392 /* NSDictionary+JsonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JsonUtility.h"; sourceTree = "<group>"; };
+		8C04C8901EFDC2B6008D2392 /* NSDictionary+JsonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JsonUtility.m"; sourceTree = "<group>"; };
 		8C12F2CC1EF46E550044BDB3 /* Chirp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C12F2D01EF46E550044BDB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C12F2D21EF46E560044BDB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,7 +95,6 @@
 		8C12F2DE1EF46E580044BDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C12F2E01EF46E580044BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C12F2E51EF46E590044BDB3 /* ChirpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChirpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C12F2E91EF46E590044BDB3 /* ChirpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChirpTests.m; sourceTree = "<group>"; };
 		8C12F2EB1EF46E590044BDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE6FABE1EFD77EB005BD36D /* TLTwitterAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLTwitterAPIClient.h; path = API/TLTwitterAPIClient.h; sourceTree = "<group>"; };
 		8CE6FABF1EFD77EB005BD36D /* TLTwitterAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLTwitterAPIClient.m; path = API/TLTwitterAPIClient.m; sourceTree = "<group>"; };
@@ -217,8 +226,13 @@
 		8C12F2E81EF46E590044BDB3 /* ChirpTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C12F2E91EF46E590044BDB3 /* ChirpTests.m */,
 				8C12F2EB1EF46E590044BDB3 /* Info.plist */,
+				8C04C87B1EFDAD23008D2392 /* TLAPITestCase.m */,
+				8C04C8851EFDB828008D2392 /* TLUserTestCases.m */,
+				8C04C8871EFDB84A008D2392 /* TLStringCategoryTest.m */,
+				8C04C8891EFDBF64008D2392 /* TLTweetTestCases.m */,
+				8C04C88F1EFDC2B6008D2392 /* NSDictionary+JsonUtility.h */,
+				8C04C8901EFDC2B6008D2392 /* NSDictionary+JsonUtility.m */,
 			);
 			path = ChirpTests;
 			sourceTree = "<group>";
@@ -586,17 +600,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CE6FAE21EFD7858005BD36D /* TLAuthUser.m in Sources */,
-				8C12F2EA1EF46E590044BDB3 /* ChirpTests.m in Sources */,
+				8C04C8911EFDC2B6008D2392 /* NSDictionary+JsonUtility.m in Sources */,
+				8C04C8861EFDB828008D2392 /* TLUserTestCases.m in Sources */,
 				8CE6FAF21EFD7878005BD36D /* TLLoginViewController.m in Sources */,
 				8CE6FB091EFD789F005BD36D /* TLProfileLoginView.m in Sources */,
 				8CE6FAC21EFD77EB005BD36D /* TLTwitterAPIClient.m in Sources */,
+				8C04C8881EFDB84A008D2392 /* TLStringCategoryTest.m in Sources */,
 				8CE6FADA1EFD782C005BD36D /* NSString+TLUtilities.m in Sources */,
 				8CE6FB0B1EFD789F005BD36D /* TLTweetButtonView.m in Sources */,
 				8CE6FAE61EFD7858005BD36D /* TLUser.m in Sources */,
+				8C04C88A1EFDBF65008D2392 /* TLTweetTestCases.m in Sources */,
 				8CE6FAF01EFD7878005BD36D /* TLHomeTimelineTableViewController.m in Sources */,
 				8CE6FAF41EFD7878005BD36D /* TLTweetEditorViewController.m in Sources */,
 				8CE6FB0D1EFD789F005BD36D /* TLTweetEditorView.m in Sources */,
 				8CE6FAE41EFD7858005BD36D /* TLTweet.m in Sources */,
+				8C04C87C1EFDAD23008D2392 /* TLAPITestCase.m in Sources */,
 				8CE6FB011EFD788F005BD36D /* TLTweetTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
