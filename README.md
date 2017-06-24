@@ -43,9 +43,13 @@ Requirements:
   - make sure character limit is followed
   - once successfully posted, should show as first tweet on home timeline
   
-Assumptions/Choices
+Assumptions/Choices:
 - Connect to the API, and not make mock data up, however only connecting through SLRequest and ACAccount, thus for the app to work you must ave a twitter account tied to the device
 - support only iPhone and iOS8+ *I don't have to worry about UI for iPads
 - support only portrait *I don't have to worry about UI
 - in terms of storage for persistence, I've chosen to use UserDefaults and Archiving, much easier to work with plus I feel that Core Data would be alittle over kill for this simple work
-  
+- made the assumption that the user will always have some kind of connectivity
+
+Improvements:
+- My test cases need's better work, and could be more thorough
+- Accounting for no twitter account on device and/or no network available
