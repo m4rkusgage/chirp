@@ -53,3 +53,8 @@ Assumptions/Choices:
 Improvements:
 - My test cases need's better work, and could be more thorough
 - Accounting for no twitter account on device and/or no network available
+
+Learnings:
+- I got to learn a bit about the Twitter API and it's limitations, with rate limiting
+- I learned how to access the Twitter account tied to the device, but that can also extend to Facebook account
+- learned how to use Apple's unit test (my previous jobs weren't much about unit test)
