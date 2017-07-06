@@ -51,6 +51,25 @@
     }
     [self.profilePic setImageWithURL:[NSURL URLWithString:self.tweet.postedByUser.profileImageURL]];
     
+    [self.retweetCountLabel setText:self.tweet.retweetCount];
+    [self.favouriteCountLabel setText:self.tweet.likeCount];
+    
+    if (self.tweet.isFavourited) {
+        [self.favouriteCountLabel setHighlighted:YES];
+        [self.favouriteImageView setHighlighted:YES];
+    } else {
+        [self.favouriteCountLabel setHighlighted:NO];
+        [self.favouriteImageView setHighlighted:NO];
+    }
+    
+    if (self.tweet.isRetweet) {
+        [self.retweetCountLabel setHighlighted:YES];
+        [self.retweetImageView setHighlighted:YES];
+    } else {
+        [self.retweetCountLabel setHighlighted:NO];
+        [self.retweetImageView setHighlighted:NO];
+    }
+    
     return self;
 }
 

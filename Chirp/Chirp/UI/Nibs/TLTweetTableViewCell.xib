@@ -11,22 +11,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="200" id="KGk-i7-Jjw" customClass="TLTweetTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="225" id="KGk-i7-Jjw" customClass="TLTweetTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="205"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="205"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mf1-JM-fID">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="196.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="201.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-Ba-hfN">
-                                <rect key="frame" x="67" y="40" width="245" height="136"/>
+                                <rect key="frame" x="67" y="40" width="245" height="133.5"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">As you can see, there is no height constraint for the label. We don’t want this because the height is dynamic and the label calculates the height on itself – also called intrinsic content size. In order for the label to do that, it has to use as many lines as necessary. For that, we set the nuAs you can see, there is no height constraint for the label. We don’t want this because the height is dynamic and the label http://www.apple.com calculates the height on itself – also called intrinsic content size. In order for the label to do that, it has to use as many lines as necessary. For that, we set the number of lines to 0 and use “word wrap” as line break mode:mber of lines to 0 and use “word wrap” as line break mode:qq</mutableString>
+                                        <string key="content">As you can see, there is no height constraint for the label. We don’t want this because the height is dynamic and the label calculates the height on itself – also called intrinsic content size. In order for the label to do that, it has to use as many lines as necessary. For that, we set the nuAs you can see, there is no height constraint for the label. We don’t want this because the height is dynamic and the label http://www.apple.com calculates the height on itself – also called intrinsic content size. In order for the label to do that, it has to use as many lines as necessary. For that, we set the number of lines to 0 and use “word wrap” as line break mode:mber of lines to 0 and use “word wrap” as line break mode:qq</string>
                                         <attributes>
                                             <color key="NSColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="14" name="Helvetica-Light"/>
@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9M-Tt-tsQ">
-                                <rect key="frame" x="67" y="5" width="245" height="21"/>
+                                <rect key="frame" x="67" y="5" width="200" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Mark Gage">
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGU-h6-PBa">
-                                <rect key="frame" x="67" y="20" width="245" height="21"/>
+                                <rect key="frame" x="67" y="20" width="200" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="@mark_gage86">
@@ -62,8 +62,8 @@
                                 <color key="highlightedColor" red="0.34759935736656189" green="0.75282847881317139" blue="0.89198142290115356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIk-Bf-0nG">
-                                <rect key="frame" x="70" y="175" width="242" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="233" y="4" width="80" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="THURSDAY 2017">
                                         <attributes>
@@ -84,10 +84,75 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.25" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sv-ou-2Hf">
+                                <rect key="frame" x="150" y="173" width="75" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jii-kD-vap">
+                                        <rect key="frame" x="28" y="1" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="40">
+                                                <attributes>
+                                                    <font key="NSFont" size="13" name="HelveticaNeue-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="highlightedColor" red="0.86844390630000001" green="0.44288289549999998" blue="0.43934333320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="retweet.png" highlightedImage="retweet-select.png" translatesAutoresizingMaskIntoConstraints="NO" id="EDz-QD-ze8">
+                                        <rect key="frame" x="2" y="3" width="18" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTJ-Cn-pF0">
+                                <rect key="frame" x="233" y="173" width="75" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIX-dh-FlX">
+                                        <rect key="frame" x="28" y="1" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="40">
+                                                <attributes>
+                                                    <font key="NSFont" size="13" name="HelveticaNeue-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="highlightedColor" red="0.86844390630000001" green="0.44288289549999998" blue="0.43934333320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="like.png" highlightedImage="like-select.png" translatesAutoresizingMaskIntoConstraints="NO" id="M5i-cl-E9r">
+                                        <rect key="frame" x="4" y="4" width="16" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6y-oH-qaK">
+                                <rect key="frame" x="67" y="173" width="75" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PC-eI-yXF">
+                                        <rect key="frame" x="28" y="2" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chat.png" translatesAutoresizingMaskIntoConstraints="NO" id="oTH-2J-ZpT">
+                                        <rect key="frame" x="2" y="3" width="18" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="mh6-Ba-hfN" secondAttribute="bottom" constant="20" id="Q3L-8M-ruO"/>
+                            <constraint firstAttribute="bottom" secondItem="mh6-Ba-hfN" secondAttribute="bottom" constant="28" id="Q3L-8M-ruO"/>
                             <constraint firstItem="mh6-Ba-hfN" firstAttribute="leading" secondItem="Mf1-JM-fID" secondAttribute="leading" constant="67" id="RUk-qU-MUf"/>
                             <constraint firstItem="mh6-Ba-hfN" firstAttribute="top" secondItem="Mf1-JM-fID" secondAttribute="top" constant="40" id="swk-hF-lOK"/>
                             <constraint firstAttribute="trailing" secondItem="mh6-Ba-hfN" secondAttribute="trailing" constant="8" id="zms-lX-EJq"/>
@@ -103,18 +168,27 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="favouriteCountLabel" destination="eIX-dh-FlX" id="6MU-sW-4lg"/>
+                <outlet property="favouriteImageView" destination="M5i-cl-E9r" id="uMm-x9-hxR"/>
                 <outlet property="profilePic" destination="uYW-ig-Hhy" id="vgs-ca-Fva"/>
+                <outlet property="retweetCountLabel" destination="Jii-kD-vap" id="jZs-BW-bRv"/>
+                <outlet property="retweetImageView" destination="EDz-QD-ze8" id="OQR-P9-5gF"/>
                 <outlet property="tweetDateLabel" destination="wIk-Bf-0nG" id="adh-Jt-iPo"/>
                 <outlet property="tweetText" destination="mh6-Ba-hfN" id="jF4-IQ-uJk"/>
                 <outlet property="twitterHandle" destination="MGU-h6-PBa" id="EJT-xc-EsQ"/>
                 <outlet property="userName" destination="c9M-Tt-tsQ" id="c9r-qQ-M8b"/>
                 <outlet property="verifiedPic" destination="ePp-r2-c9x" id="k4O-gQ-qCr"/>
             </connections>
-            <point key="canvasLocation" x="27" y="31"/>
+            <point key="canvasLocation" x="27" y="43"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="chat.png" width="64" height="64"/>
+        <image name="like-select.png" width="64" height="64"/>
+        <image name="like.png" width="64" height="64"/>
         <image name="no_profile_img.png" width="500" height="500"/>
+        <image name="retweet-select.png" width="64" height="64"/>
+        <image name="retweet.png" width="64" height="64"/>
         <image name="verified_profile_img.png" width="500" height="500"/>
     </resources>
 </document>

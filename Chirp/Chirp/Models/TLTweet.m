@@ -15,8 +15,10 @@
     [self setTweetID:dictionary[@"id_str"]];
     [self setTweetText:dictionary[@"text"]];
     [self setTweetPostedAt:dictionary[@"created_at"]];
-    [self setLikeCount:dictionary[@"favorite_count"]];
-    [self setRetweetCount:dictionary[@"retweet_count"]];
+    [self setLikeCount:[NSString stringWithFormat:@"%d",[dictionary[@"favorite_count"] intValue]]];
+    [self setFavourite:[dictionary[@"favorited"] boolValue]];
+    [self setRetweetCount:[NSString stringWithFormat:@"%d",[dictionary[@"retweet_count"] intValue]]];
+    [self setRetweet:[dictionary[@"retweeted"] boolValue]];
     
     TLUser *user = [[TLUser alloc]  init];
     [user setDataWith:dictionary[@"user"]];
@@ -31,7 +33,9 @@
         self.tweetText = [decoder decodeObjectForKey:@"tweetText"];
         self.tweetPostedAt = [decoder decodeObjectForKey:@"tweetPostedAt"];
         self.likeCount = [decoder decodeObjectForKey:@"likeCount"];
+        self.favourite = [decoder decodeBoolForKey:@"isFavourite"];
         self.retweetCount = [decoder decodeObjectForKey:@"retweetCount"];
+        self.retweet = [decoder decodeBoolForKey:@"isRetweet"];
         self.postedByUser = [decoder decodeObjectForKey:@"postedByUser"];
         
     }
@@ -44,7 +48,9 @@
     [encoder encodeObject:_tweetText forKey:@"tweetText"];
     [encoder encodeObject:_tweetPostedAt forKey:@"tweetPostedAt"];
     [encoder encodeObject:_likeCount forKey:@"likeCount"];
+    [encoder encodeBool:_favourite forKey:@"isFavourite"];
     [encoder encodeObject:_retweetCount forKey:@"retweetCount"];
+    [encoder encodeBool:_retweet forKey:@"isRetweet"];
     [encoder encodeObject:_postedByUser forKey:@"postedByUser"];
 }
 
