@@ -86,7 +86,13 @@
         [_notificationLabel setBackgroundColor:[UIColor colorWithRed:(89.0/255.0) green:(192.0/255.0) blue:(227.0/255.0) alpha:1]];
         [_notificationLabel setTextColor:[UIColor whiteColor]];
         [_notificationLabel setTextAlignment:NSTextAlignmentCenter];
+        [_notificationLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0]];
         [_notificationLabel setAlpha:0];
+        
+        CAShapeLayer * maskLayer = [CAShapeLayer layer];
+        maskLayer.path = [UIBezierPath bezierPathWithRoundedRect: _notificationLabel.bounds byRoundingCorners: UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii: (CGSize){3.0, 3.0}].CGPath;
+        
+        _notificationLabel.layer.mask = maskLayer;
     }
     return _notificationLabel;
 }
