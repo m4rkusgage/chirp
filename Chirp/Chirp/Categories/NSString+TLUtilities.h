@@ -11,5 +11,6 @@
 @interface NSString (TLUtilities)
 
 + (NSString *)getTweetTimeIntervalString:(NSString *)tweetTime;
++ (NSString *)removeSuffixString:(NSString *)suffix fromString:(NSMutableString *)string;
 
 @end

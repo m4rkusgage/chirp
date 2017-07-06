@@ -7,6 +7,7 @@
 //
 
 #import "TLUser.h"
+#import "NSString+TLUtilities.h"
 
 @implementation TLUser
 
@@ -16,7 +17,8 @@
     [self setUserName:dictionary[@"name"]];
     [self setUserScreenName:dictionary[@"screen_name"]];
     [self setProfileDescription:dictionary[@"description"]];
-    [self setProfileImageURL:dictionary[@"profile_image_url_https"]];
+    [self setProfileImageURL:[NSString removeSuffixString:@"_normal"
+                                               fromString:[dictionary[@"profile_image_url_https"] mutableCopy]]];
     [self setProfileBannerURL:dictionary[@"profile_banner_url"]];
     [self setIsVerified:[dictionary[@"verified"] boolValue]];
 }
