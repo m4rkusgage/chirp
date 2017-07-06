@@ -9,6 +9,7 @@
 #import "TLTweetTableViewCell.h"
 #import "UIKit+AFNetworking.h"
 #import "NSString+TLUtilities.h"
+#import "NSMutableAttributedString+TLUtilities.h"
 
 @interface TLTweetTableViewCell ()
 @property (strong, nonatomic) TLTweet *tweet;
@@ -39,7 +40,9 @@
 {
     [self.userName setText:self.tweet.postedByUser.userName];
     [self.twitterHandle setText:[NSString stringWithFormat:@"@%@",self.tweet.postedByUser.userScreenName]];
-    [self.tweetText setText:self.tweet.tweetText];
+    
+    [self.tweetText setAttributedText:[NSMutableAttributedString decorateWithTags:self.tweet.tweetText]];
+    
     [self.tweetDateLabel setText:[NSString getTweetTimeIntervalString:self.tweet.tweetPostedAt]];
     if (![self.tweet.postedByUser isVerified]) {
         [self.verifiedPic setAlpha:0];
