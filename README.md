@@ -9,6 +9,8 @@ Requirements:
 - *no need to connect with API can just mock data
 - *no need to make custom controls or design
 
+![screenshots](https://user-images.githubusercontent.com/2266716/27924949-0eb8f5ec-6251-11e7-816c-2d0376db0730.png)
+
 Now simple tasks, but I want this to be more then just an assignment, I wanna be able to say at the very least, if I dont get the job I can say I learned something. So I worked on this as if I'm on the job. I ran this as if it was a week long sprint. Tasked out the requirements, that you can see as issues, and added in a requirement of my own. Also worked as if I was working on a team, with Git Flow, working on feature branches and merging them in as completed.
 
 Here's my new requirements and assumptions/choices made:
