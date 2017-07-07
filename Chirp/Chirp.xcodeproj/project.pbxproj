@@ -26,6 +26,7 @@
 		8C75D7211F0E8A1900D6F0E0 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C75D71E1F0E8A1900D6F0E0 /* like.png */; };
 		8C75D7241F0E8AFD00D6F0E0 /* retweet-select.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C75D7221F0E8AFD00D6F0E0 /* retweet-select.png */; };
 		8C75D7251F0E8AFD00D6F0E0 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C75D7231F0E8AFD00D6F0E0 /* retweet.png */; };
+		8C75D7591F0ECFD900D6F0E0 /* feather.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C75D7581F0ECFD900D6F0E0 /* feather.png */; };
 		8CE6FAC11EFD77EB005BD36D /* TLTwitterAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6FABF1EFD77EB005BD36D /* TLTwitterAPIClient.m */; };
 		8CE6FAC21EFD77EB005BD36D /* TLTwitterAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE6FABF1EFD77EB005BD36D /* TLTwitterAPIClient.m */; };
 		8CE6FAC31EFD77EB005BD36D /* TwitterConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CE6FAC01EFD77EB005BD36D /* TwitterConfig.plist */; };
@@ -112,6 +113,7 @@
 		8C75D71E1F0E8A1900D6F0E0 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		8C75D7221F0E8AFD00D6F0E0 /* retweet-select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet-select.png"; sourceTree = "<group>"; };
 		8C75D7231F0E8AFD00D6F0E0 /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet.png; sourceTree = "<group>"; };
+		8C75D7581F0ECFD900D6F0E0 /* feather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feather.png; sourceTree = "<group>"; };
 		8CE6FABE1EFD77EB005BD36D /* TLTwitterAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLTwitterAPIClient.h; path = API/TLTwitterAPIClient.h; sourceTree = "<group>"; };
 		8CE6FABF1EFD77EB005BD36D /* TLTwitterAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLTwitterAPIClient.m; path = API/TLTwitterAPIClient.m; sourceTree = "<group>"; };
 		8CE6FAC01EFD77EB005BD36D /* TwitterConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TwitterConfig.plist; path = API/TwitterConfig.plist; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		8CE6FA5C1EFD672A005BD36D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8C75D7581F0ECFD900D6F0E0 /* feather.png */,
 				8C75D7221F0E8AFD00D6F0E0 /* retweet-select.png */,
 				8C75D7231F0E8AFD00D6F0E0 /* retweet.png */,
 				8C75D71C1F0E8A1900D6F0E0 /* chat.png */,
@@ -474,6 +477,7 @@
 				8CE6FAD11EFD7819005BD36D /* twitter_icon_img_2.png in Resources */,
 				8C12F2DF1EF46E580044BDB3 /* LaunchScreen.storyboard in Resources */,
 				8C12F2DC1EF46E580044BDB3 /* Assets.xcassets in Resources */,
+				8C75D7591F0ECFD900D6F0E0 /* feather.png in Resources */,
 				8CE6FAC31EFD77EB005BD36D /* TwitterConfig.plist in Resources */,
 				8CE6FAD51EFD7819005BD36D /* verified_profile_img.png in Resources */,
 				8CE6FAFC1EFD7884005BD36D /* TLTweetTableViewCell.xib in Resources */,
