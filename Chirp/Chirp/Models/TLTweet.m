@@ -7,8 +7,17 @@
 //
 
 #import "TLTweet.h"
+#import "TLEntity.h"
 
 @implementation TLTweet
+
+- (NSMutableArray *)entityArray
+{
+    if (!_entityArray) {
+        _entityArray = [[NSMutableArray alloc] init];
+    }
+    return _entityArray;
+}
 
 - (void)setDataWith:(NSDictionary *)dictionary
 {
@@ -23,6 +32,18 @@
     TLUser *user = [[TLUser alloc]  init];
     [user setDataWith:dictionary[@"user"]];
     [self setPostedByUser:user];
+    
+    NSDictionary *extended_entity = dictionary[@"extended_entities"];
+    
+    if (extended_entity && [extended_entity[@"media"] count]) {
+        NSDictionary *media = [extended_entity[@"media"] lastObject];
+        
+        if ([media[@"type"] isEqualToString:@"photo"]) {
+            TLEntity *entityElement = [[TLEntity alloc] initWithEntityType:TLEntityTypePhoto];
+            [entityElement setDataWith:media];
+            [self.entityArray addObject:entityElement];
+        }
+    }
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -37,7 +58,7 @@
         self.retweetCount = [decoder decodeObjectForKey:@"retweetCount"];
         self.retweet = [decoder decodeBoolForKey:@"isRetweet"];
         self.postedByUser = [decoder decodeObjectForKey:@"postedByUser"];
-        
+        self.entityArray = [decoder decodeObjectForKey:@"entityArray"];
     }
     return self;
 }
@@ -52,6 +73,7 @@
     [encoder encodeObject:_retweetCount forKey:@"retweetCount"];
     [encoder encodeBool:_retweet forKey:@"isRetweet"];
     [encoder encodeObject:_postedByUser forKey:@"postedByUser"];
+    [encoder encodeObject:_entityArray forKey:@"entityArray"];
 }
 
 @end

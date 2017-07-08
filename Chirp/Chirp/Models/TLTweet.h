@@ -16,6 +16,7 @@
 @property (copy, nonatomic) NSString *tweetPostedAt;
 @property (copy, nonatomic) NSString *retweetCount;
 @property (copy, nonatomic) NSString *likeCount;
+@property (strong, nonatomic) NSMutableArray *entityArray;
 @property (strong, nonatomic) TLUser *postedByUser;
 @property (assign, nonatomic, getter=isRetweet) BOOL retweet;
 @property (assign, nonatomic, getter=isFavourited) BOOL favourite;
