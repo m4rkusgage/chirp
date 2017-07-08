@@ -41,4 +41,10 @@
     }
 }
 
++ (NSString *)removeSuffixString:(NSString *)suffix fromString:(NSMutableString *)string
+{
+    NSString *suffixFreeString = [string stringByReplacingOccurrencesOfString:suffix
+                                                                   withString:@""];
+    return suffixFreeString;
+}
 @end

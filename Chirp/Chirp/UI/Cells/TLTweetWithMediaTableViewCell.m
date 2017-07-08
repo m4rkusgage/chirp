@@ -1,34 +1,41 @@
 //
-//  TLTweetTableViewCell.m
+//  TLTweetWithMediaTableViewCell.m
 //  Chirp
 //
-//  Created by Mark Gage on 2017-06-22.
+//  Created by Mark Gage on 2017-07-07.
 //  Copyright © 2017 Mark Gage. All rights reserved.
 //
 
-#import "TLTweetTableViewCell.h"
+#import "TLTweetWithMediaTableViewCell.h"
 #import "UIKit+AFNetworking.h"
 #import "NSString+TLUtilities.h"
 #import "NSMutableAttributedString+TLUtilities.h"
+#import "TLEntity.h"
 
-@interface TLTweetTableViewCell ()
+@interface TLTweetWithMediaTableViewCell ()
 @property (strong, nonatomic) TLTweet *tweet;
+@property (assign, nonatomic) BOOL hasImage;
 @end
 
-@implementation TLTweetTableViewCell
+@implementation TLTweetWithMediaTableViewCell
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
     
     [self.profilePic.layer setCornerRadius:8.0];
     [self.profilePic.layer setMasksToBounds:YES];
+    
+    [self.assetImageView.layer setCornerRadius:3.0];
+    [self.assetImageView.layer setMasksToBounds:YES];
+    [self.assetImageView.layer setBorderColor:[UIColor colorWithRed:(179.0/255.0) green:(179.0/255.0) blue:(179.0/255.0) alpha:1.0].CGColor];
+    [self.assetImageView.layer setBorderWidth:0.5];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
 }
 
 - (void)addTweetData:(TLTweet *)tweet
@@ -36,7 +43,7 @@
     self.tweet = tweet;
 }
 
-- (TLTweetTableViewCell *)updateCell
+- (TLTweetWithMediaTableViewCell *)updateCell
 {
     [self.userName setText:self.tweet.postedByUser.userName];
     [self.twitterHandle setText:[NSString stringWithFormat:@"@%@",self.tweet.postedByUser.userScreenName]];
@@ -70,9 +77,14 @@
         [self.retweetImageView setHighlighted:NO];
     }
     
+    for (TLEntity *entity in self.tweet.entityArray) {
+        if (entity.entityType == TLEntityTypePhoto) {
+           [self.assetImageView setImageWithURL:[NSURL URLWithString:entity.mediaURLString]];
+        } else {
+            [self.assetImageView setImage:nil];
+        }
+    }
     return self;
 }
-
-
 
 @end

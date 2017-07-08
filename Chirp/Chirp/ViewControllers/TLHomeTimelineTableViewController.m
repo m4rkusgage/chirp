@@ -9,10 +9,12 @@
 #import "TLHomeTimelineTableViewController.h"
 #import "TLTwitterAPIClient.h"
 #import "TLTweetTableViewCell.h"
+#import "TLTweetWithMediaTableViewCell.h"
 #import "TLTweet.h"
 #import "TLTweetButtonView.h"
 #import "TLTweetEditorViewController.h"
 #import "TLTweetPostDelegate.h"
+#import "UITableViewCell+TLExtensions.h"
 
 @interface TLHomeTimelineTableViewController ()<UITableViewDelegate, UITableViewDataSource, TLTweetPostDelegate, TLTweetEditorViewControllerDelegate>
 {
@@ -41,6 +43,8 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TLTweetTableViewCell" bundle:nil]
          forCellReuseIdentifier:@"tweetCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TLTweetWithMediaTableViewCell" bundle:nil]
+         forCellReuseIdentifier:@"tweetMediaCell"];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 150;
@@ -48,7 +52,7 @@
     [self updateData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateData)
+                                             selector:@selector(loadData)
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
 }
@@ -86,7 +90,13 @@
         [_notificationLabel setBackgroundColor:[UIColor colorWithRed:(89.0/255.0) green:(192.0/255.0) blue:(227.0/255.0) alpha:1]];
         [_notificationLabel setTextColor:[UIColor whiteColor]];
         [_notificationLabel setTextAlignment:NSTextAlignmentCenter];
+        [_notificationLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0]];
         [_notificationLabel setAlpha:0];
+        
+        CAShapeLayer * maskLayer = [CAShapeLayer layer];
+        maskLayer.path = [UIBezierPath bezierPathWithRoundedRect: _notificationLabel.bounds byRoundingCorners: UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii: (CGSize){3.0, 3.0}].CGPath;
+        
+        _notificationLabel.layer.mask = maskLayer;
     }
     return _notificationLabel;
 }
@@ -114,12 +124,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TLTweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetCell" forIndexPath:indexPath];
-    
+    UITableViewCell *basicCell;
     TLTweet *tweet = [self.tweetList objectAtIndex:indexPath.row];
-    [cell addTweetData:tweet];
     
-    return [cell updateCell];
+    if ([tweet.entityArray count] > 0) {
+        TLTweetWithMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetMediaCell" forIndexPath:indexPath];
+        [cell addTweetData:tweet];
+        basicCell = cell;
+    } else {
+        TLTweetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tweetCell" forIndexPath:indexPath];
+        [cell addTweetData:tweet];
+        basicCell = cell;
+    }
+    
+    return [basicCell updateCell];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -205,7 +223,7 @@
                                         [self.tableView scrollToRowAtIndexPath:indexPath
                                                               atScrollPosition:UITableViewScrollPositionTop
                                                                       animated:NO];
-                                        newTweetCounter = (int)[tweets count];
+                                        newTweetCounter += (int)[tweets count];
                                         [self.notificationLabel setText:[NSString stringWithFormat:@"%d", newTweetCounter]];
                                         [self showNotification];
                                     }
@@ -223,6 +241,31 @@
                                     }
                                 }];
     }
+}
+
+- (void)loadData
+{
+    TLAuthUser *authUser = [self.apiClient getAuthorizedUser];
+    TLTweet *lastTweet = [self.tweetList firstObject];
+    [self.apiClient getHomeTimelineForAccount:authUser.twitterAccount
+                                      forView:self.navigationController.view
+                                      sinceID:lastTweet.tweetID
+                            completionHandler:^(NSArray *tweets) {
+                                if (tweets) {
+                                    
+                                    //place newer tweets gotten to the front of the array
+                                    NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,[tweets count])];
+                                    [self.tweetList insertObjects:tweets atIndexes:indexes];
+                                    [self.apiClient saveTweetList:self.tweetList];
+                                    
+                                    newTweetCounter += (int)[tweets count];
+                                    
+                                    [self.tableView reloadData];
+                                    
+                                    [self.notificationLabel setText:[NSString stringWithFormat:@"%d", newTweetCounter]];
+                                    [self showNotification];
+                                }
+                            }];
 }
 
 - (void)showNotification
