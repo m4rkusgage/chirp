@@ -43,6 +43,18 @@
             [entityElement setDataWith:media];
             [self.entityArray addObject:entityElement];
         }
+        
+       else if ([media[@"type"] isEqualToString:@"video"]) {
+            TLEntity *entityElement = [[TLEntity alloc] initWithEntityType:TLEntityTypeVideo];
+            [entityElement setDataWith:media];
+            [self.entityArray addObject:entityElement];
+        }
+        
+        else if ([media[@"type"] isEqualToString:@"animated_gif"]) {
+            TLEntity *entityElement = [[TLEntity alloc] initWithEntityType:TLEntityTypeGIF];
+            [entityElement setDataWith:media];
+            [self.entityArray addObject:entityElement];
+        }
     }
 }
 

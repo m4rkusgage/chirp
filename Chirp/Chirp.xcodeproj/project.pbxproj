@@ -26,6 +26,8 @@
 		8C1E22C61F0FEBF1004D8DC6 /* TLTweetWithMediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E22C41F0FEBF1004D8DC6 /* TLTweetWithMediaTableViewCell.xib */; };
 		8C1E22C91F0FED1A004D8DC6 /* UITableViewCell+TLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E22C81F0FED1A004D8DC6 /* UITableViewCell+TLExtensions.m */; };
 		8C1E22CA1F0FED1A004D8DC6 /* UITableViewCell+TLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1E22C81F0FED1A004D8DC6 /* UITableViewCell+TLExtensions.m */; };
+		8C1E79D51F148D9D0048F55F /* twitter-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E79D41F148D9D0048F55F /* twitter-white.png */; };
+		8C1E79D71F148DA20048F55F /* job.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E79D61F148DA20048F55F /* job.png */; };
 		8C75D7091F0E057D00D6F0E0 /* NSMutableAttributedString+TLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75D7081F0E057D00D6F0E0 /* NSMutableAttributedString+TLUtilities.m */; };
 		8C75D70A1F0E057D00D6F0E0 /* NSMutableAttributedString+TLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C75D7081F0E057D00D6F0E0 /* NSMutableAttributedString+TLUtilities.m */; };
 		8C75D7191F0E838600D6F0E0 /* like-select.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C75D7161F0E838600D6F0E0 /* like-select.png */; };
@@ -118,6 +120,8 @@
 		8C1E22C41F0FEBF1004D8DC6 /* TLTweetWithMediaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TLTweetWithMediaTableViewCell.xib; path = UI/Nibs/TLTweetWithMediaTableViewCell.xib; sourceTree = "<group>"; };
 		8C1E22C71F0FED1A004D8DC6 /* UITableViewCell+TLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+TLExtensions.h"; path = "Categories/UITableViewCell+TLExtensions.h"; sourceTree = "<group>"; };
 		8C1E22C81F0FED1A004D8DC6 /* UITableViewCell+TLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+TLExtensions.m"; path = "Categories/UITableViewCell+TLExtensions.m"; sourceTree = "<group>"; };
+		8C1E79D41F148D9D0048F55F /* twitter-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-white.png"; sourceTree = "<group>"; };
+		8C1E79D61F148DA20048F55F /* job.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = job.png; sourceTree = "<group>"; };
 		8C75D7071F0E057D00D6F0E0 /* NSMutableAttributedString+TLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+TLUtilities.h"; path = "Categories/NSMutableAttributedString+TLUtilities.h"; sourceTree = "<group>"; };
 		8C75D7081F0E057D00D6F0E0 /* NSMutableAttributedString+TLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+TLUtilities.m"; path = "Categories/NSMutableAttributedString+TLUtilities.m"; sourceTree = "<group>"; };
 		8C75D7161F0E838600D6F0E0 /* like-select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like-select.png"; sourceTree = "<group>"; };
@@ -347,6 +351,8 @@
 		8CE6FA5C1EFD672A005BD36D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8C1E79D61F148DA20048F55F /* job.png */,
+				8C1E79D41F148D9D0048F55F /* twitter-white.png */,
 				8C75D7581F0ECFD900D6F0E0 /* feather.png */,
 				8C75D7221F0E8AFD00D6F0E0 /* retweet-select.png */,
 				8C75D7231F0E8AFD00D6F0E0 /* retweet.png */,
@@ -494,6 +500,7 @@
 				8CE6FACF1EFD7819005BD36D /* profile_setting_img.png in Resources */,
 				8CE6FAD11EFD7819005BD36D /* twitter_icon_img_2.png in Resources */,
 				8C1E22C51F0FEBF1004D8DC6 /* TLTweetWithMediaTableViewCell.xib in Resources */,
+				8C1E79D51F148D9D0048F55F /* twitter-white.png in Resources */,
 				8C12F2DF1EF46E580044BDB3 /* LaunchScreen.storyboard in Resources */,
 				8C12F2DC1EF46E580044BDB3 /* Assets.xcassets in Resources */,
 				8C75D7591F0ECFD900D6F0E0 /* feather.png in Resources */,
@@ -504,6 +511,7 @@
 				8C75D7211F0E8A1900D6F0E0 /* like.png in Resources */,
 				8C75D71F1F0E8A1900D6F0E0 /* chat.png in Resources */,
 				8C75D7251F0E8AFD00D6F0E0 /* retweet.png in Resources */,
+				8C1E79D71F148DA20048F55F /* job.png in Resources */,
 				8CE6FACD1EFD7819005BD36D /* no_profile_img.png in Resources */,
 				8C75D7191F0E838600D6F0E0 /* like-select.png in Resources */,
 				8C75D7201F0E8A1900D6F0E0 /* chat-select.png in Resources */,

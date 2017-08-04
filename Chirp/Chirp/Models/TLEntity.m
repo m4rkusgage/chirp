@@ -36,6 +36,11 @@
             self.videoURLString = [dictionary[@"video_info"][@"variants"] objectAtIndex:0][@"url"];
             break;
             
+        case TLEntityTypeGIF:
+            self.mediaURLString = dictionary[@"media_url_https"];
+            self.videoURLString = [dictionary[@"video_info"][@"variants"] objectAtIndex:0][@"url"];
+            break;
+            
         default:
             break;
     }

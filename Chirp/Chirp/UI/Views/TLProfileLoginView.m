@@ -14,16 +14,15 @@
 {
     [super awakeFromNib];
     
-    [self.profileImageView.layer setCornerRadius:8.0];
+    [self.profileImageView.layer setCornerRadius:75.0];
     [self.profileImageView.layer setMasksToBounds:YES];
+    [self.profileImageView.layer setBorderWidth:3.0];
+    [self.profileImageView.layer setBorderColor:[UIColor whiteColor].CGColor];
         
     [self.loginButton.layer setCornerRadius:5.0];
-    [self.loginButton setBackgroundColor:[UIColor colorWithRed:(89.0/255.0)
-                                                         green:(192.0/255.0)
-                                                          blue:(227.0/255.0)
-                                                         alpha:1.0]];
-    [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.loginButton.titleLabel setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
+    [self.loginButton.layer setBorderWidth:3.0];
+    [self.loginButton.layer setBorderColor:[UIColor whiteColor].CGColor];
+    
 }
 
 - (IBAction)loginButtonPressed:(id)sender

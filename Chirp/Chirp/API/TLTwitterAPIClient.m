@@ -230,7 +230,7 @@
 
 - (void)deleteSavedTweets
 {
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"postList"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"postList"];
 }
 
 @end

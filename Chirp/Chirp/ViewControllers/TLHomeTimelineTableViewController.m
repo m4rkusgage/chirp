@@ -107,7 +107,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setFrame:CGRectMake(10.0, 2.0, 45.0, 40.0)];
         [button addTarget:self action:@selector(showProfileOpitions:) forControlEvents:UIControlEventTouchUpInside];
-        [button setImage:[UIImage imageNamed:@"profile_setting_img.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"job.png"] forState:UIControlStateNormal];
         
         _userSettingButton = [[UIBarButtonItem alloc]initWithCustomView:button];
     }

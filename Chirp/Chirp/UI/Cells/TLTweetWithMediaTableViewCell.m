@@ -15,6 +15,7 @@
 @interface TLTweetWithMediaTableViewCell ()
 @property (strong, nonatomic) TLTweet *tweet;
 @property (assign, nonatomic) BOOL hasImage;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @end
 
 @implementation TLTweetWithMediaTableViewCell
@@ -77,9 +78,22 @@
         [self.retweetImageView setHighlighted:NO];
     }
     
+    [self.contentLabel.layer setCornerRadius:3.0];
+    [self.contentLabel.layer setMasksToBounds:YES];
+    [self.contentLabel setAlpha:0];
+    
     for (TLEntity *entity in self.tweet.entityArray) {
         if (entity.entityType == TLEntityTypePhoto) {
            [self.assetImageView setImageWithURL:[NSURL URLWithString:entity.mediaURLString]];
+        } else if (entity.entityType == TLEntityTypeVideo || entity.entityType == TLEntityTypeGIF) {
+            [self.assetImageView setImageWithURL:[NSURL URLWithString:entity.mediaURLString]];
+            [self.contentLabel setAlpha:1];
+            
+            if (entity.entityType == TLEntityTypeVideo) {
+                [self.contentLabel setText:@"VIDEO"];
+            } else {
+                [self.contentLabel setText:@"GIF"];
+            }
         } else {
             [self.assetImageView setImage:nil];
         }
